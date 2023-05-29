@@ -44,11 +44,89 @@
 <!-- Fin de component "carousel" -->
 
 <!-- Debut component "Cards" pour afficher au moins 6 catégries aléatoirement -->
+<section class="container">
+  <h2 class="text-center my-5">
+    One day, one recipe ! Discover a new economical, easy and quick cooking recipe every day
+  </h2>
+
+  <div class="row">
+    <div class="col-lg">
+      <div class="card">
+        <img [src]="slides[0].src" class="card-img-top" [alt]="slides[0].title">
+        <div class="card-body">
+          <h5 class="card-title">{{slides[0].title}}</h5>
+          <p class="card-text">message de test !</p>
+          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple">button</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg">
+      <div class="card">
+        <img [src]="slides[1].src" class="card-img-top" [alt]="slides[1].title">
+        <div class="card-body">
+          <h5 class="card-title">{{slides[1].title}}</h5>
+          <p class="card-text">message de test !</p>
+          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple">button</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg">
+      <div class="card">
+        <img [src]="slides[2].src" class="card-img-top" [alt]="slides[2].title">
+        <div class="card-body">
+          <h5 class="card-title">{{slides[2].title}}</h5>
+          <p class="card-text">message de test !</p>
+          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple">button</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg">
+      <div class="card">
+        <img [src]="slides[0].src" class="card-img-top" [alt]="slides[0].title">
+        <div class="card-body">
+          <h5 class="card-title">{{slides[0].title}}</h5>
+          <p class="card-text">message de test !</p>
+          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exempleModalToggle">button</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg">
+      <div class="card">
+        <img [src]="slides[1].src" class="card-img-top" [alt]="slides[1].title">
+        <div class="card-body">
+          <h5 class="card-title">{{slides[1].title}}</h5>
+          <p class="card-text">message de test !</p>
+          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple">button</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg">
+      <div class="card">
+        <img [src]="slides[2].src" class="card-img-top" [alt]="slides[2].title">
+        <div class="card-body">
+          <h5 class="card-title">{{slides[2].title}}</h5>
+          <p class="card-text">message de test !</p>
+          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple">button</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
 
 <!-- Fin component Cards -->
 
 
 <!-- Debut component "Avis des clients"  -->
 
+<section class="container notice">
+  <h2 class="text-center">
+    Customer reviews</h2>
 
+</section>
 <!-- Fin de l'avis des clients -->
