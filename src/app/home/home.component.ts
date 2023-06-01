@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CategoryService } from '../services/category.service';
 
 @Component({
   selector: 'app-home',
@@ -6,32 +7,43 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  slides: any[] = new Array(3).fill({
-    id: -1,
-    src: '',
-    title: '',
-    subtitle: '',
-  });
-  constructor() {}
+
+
+  recipes = [{
+    id: 0,
+    src: '../../assets/cake.jpeg',
+    title: 'Rainbow cake',
+    subtitle: 'try this recipe !',
+  },
+  {
+    id: 1,
+    src: '../../assets/grilled-meat.jpeg',
+    title: 'Grilled meat',
+    subtitle: 'try this recipe !',
+  },
+  {
+    id: 2,
+    src: '../../assets/pasta.jpeg',
+    title: 'Pasta',
+    subtitle: 'try this recipe !',
+  }
+
+  ]
+
+  constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
-    this.slides[0] = {
-      id: 0,
-      src: '../../assets/cake.jpeg',
-      title: 'Rainbow cake',
-      subtitle: 'try this recipe !',
-    };
-    this.slides[1] = {
-      id: 1,
-      src: '../../assets/grilled-meat.jpeg',
-      title: 'Grilled meat',
-      subtitle: 'try this recipe !',
-    };
-    this.slides[2] = {
-      id: 2,
-      src: '../../assets/pasta.jpeg',
-      title: 'Pasta',
-      subtitle: 'try this recipe !',
-    };
+
+    // this.categoryService.getCategories().subscribe(
+
+    //   response => {
+    //     this.slides = response.categories;
+    //   }
+
   }
+
+
+
+
+
 }

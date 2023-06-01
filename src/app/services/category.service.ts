@@ -14,4 +14,14 @@ export class CategoryService {
   getCategories(): Observable<any> {
     return this.http.get<any>(this.URL + "categories.php");
   }
+
+  getWorldRecipes(): Observable<any> {
+    return this.http.get<any>(this.URL + "list.php?a=list");
+
+
+    // getWorldRecipesNat(nat: string): Observable < any > {
+    //   return this.http.get<any>(this.URL + "list.php?a="$nat);
+
+  }
+
 }
