@@ -1,0 +1,9 @@
+<br>
+<h1>Here are our categories :</h1>
+<br>
+<div class="container">
+    <a *ngFor="let category of categoryList" href="#">
+        {{ category.strCategory }}
+        <img [src]="category.strCategoryThumb" alt="Category Thumbnail">
+    </a>
+</div>

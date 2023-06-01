@@ -1,1 +1,132 @@
-<h1>Home page</h1>
+<!-- On peut mettre le "carousel" comme un component -->
+
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true"
+      aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img [src]="slides[0].src" class="d-block w-100 img-carousel" [alt]="slides[0].title">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{slides[0].title}}</h5>
+        <p>S{{slides[0].subtitle}}</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img [src]="slides[1].src" class="d-block w-100 img-carousel" [alt]="slides[1].title">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{slides[1].title}}</h5>
+        <p>{{slides[1].subtitle}}</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img [src]="slides[2].src" class="d-block w-100 img-carousel" [alt]="slides[2].title">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{slides[2].title}}</h5>
+        <p>{{slides[2].subtitle}}</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<!-- Fin de component "carousel" -->
+
+<!-- Debut component "Cards" pour afficher au moins 6 catégries aléatoirement -->
+<section class="container">
+  <h2 class="text-center my-5">
+    One day, one recipe ! Discover a new economical, easy and quick cooking recipe every day
+  </h2>
+
+  <div class="row">
+    <div class="col-lg">
+      <div class="card">
+        <img [src]="slides[0].src" class="card-img-top" [alt]="slides[0].title">
+        <div class="card-body">
+          <h5 class="card-title">{{slides[0].title}}</h5>
+          <p class="card-text">message de test !</p>
+          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple">button</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg">
+      <div class="card">
+        <img [src]="slides[1].src" class="card-img-top" [alt]="slides[1].title">
+        <div class="card-body">
+          <h5 class="card-title">{{slides[1].title}}</h5>
+          <p class="card-text">message de test !</p>
+          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple">button</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg">
+      <div class="card">
+        <img [src]="slides[2].src" class="card-img-top" [alt]="slides[2].title">
+        <div class="card-body">
+          <h5 class="card-title">{{slides[2].title}}</h5>
+          <p class="card-text">message de test !</p>
+          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple">button</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg">
+      <div class="card">
+        <img [src]="slides[0].src" class="card-img-top" [alt]="slides[0].title">
+        <div class="card-body">
+          <h5 class="card-title">{{slides[0].title}}</h5>
+          <p class="card-text">message de test !</p>
+          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exempleModalToggle">button</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg">
+      <div class="card">
+        <img [src]="slides[1].src" class="card-img-top" [alt]="slides[1].title">
+        <div class="card-body">
+          <h5 class="card-title">{{slides[1].title}}</h5>
+          <p class="card-text">message de test !</p>
+          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple">button</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg">
+      <div class="card">
+        <img [src]="slides[2].src" class="card-img-top" [alt]="slides[2].title">
+        <div class="card-body">
+          <h5 class="card-title">{{slides[2].title}}</h5>
+          <p class="card-text">message de test !</p>
+          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple">button</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- Fin component Cards -->
+
+
+<!-- Debut component "Avis des clients"  -->
+
+<section class="container notice">
+  <h2 class="text-center">
+    Customer reviews</h2>
+
+</section>
+<!-- Fin de l'avis des clients -->
