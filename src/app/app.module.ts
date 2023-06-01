@@ -8,6 +8,9 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { CategoryPageComponent } from './category-page/category-page.component';
+import { WorldRecipesComponent } from './world-recipes/world-recipes.component';
+import { CardComponent } from './card/card.component';
+import { AllRecipesByCountryComponent } from './all-recipes-by-country/all-recipes-by-country.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { CategoryPageComponent } from './category-page/category-page.component';
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    CategoryPageComponent
+    CategoryPageComponent,
+    WorldRecipesComponent,
+    CardComponent,
+    AllRecipesByCountryComponent
   ],
   imports: [
     BrowserModule,
