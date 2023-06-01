@@ -4,3 +4,12 @@ nav {
     -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
     max-width: 100%;
 }
+
+.navbar-nav {
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.nav-item {
+    text-align: center;
+}
