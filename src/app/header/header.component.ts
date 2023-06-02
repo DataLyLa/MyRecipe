@@ -20,7 +20,7 @@ export class HeaderComponent {
   // Fermer le menu déroulant si l'utilisateur clique en dehors de celui-ci
   windowOnClick(event: MouseEvent) {
     if (!(event.target instanceof Element) || !event.target.matches('.navbar-toggler')) {
-      const dropdowns = document.getElementsByClassName("collapse navbar-collapse");
+      const dropdowns = document.getElementsByClassName(".navbar-toggler");
       for (let i = 0; i < dropdowns.length; i++) {
         const openDropdown = dropdowns[i];
         if (openDropdown.classList.contains('show')) {

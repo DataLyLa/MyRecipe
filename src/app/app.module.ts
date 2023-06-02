@@ -11,6 +11,8 @@ import { CategoryPageComponent } from './category-page/category-page.component';
 import { WorldRecipesComponent } from './world-recipes/world-recipes.component';
 import { CardComponent } from './card/card.component';
 import { AllRecipesByCountryComponent } from './all-recipes-by-country/all-recipes-by-country.component';
+import { AllRecipesByCategoryComponent } from './all-recipes-by-category/all-recipes-by-category.component';
+import { SingleRecipeComponent } from './single-recipe/single-recipe.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { AllRecipesByCountryComponent } from './all-recipes-by-country/all-recip
     CategoryPageComponent,
     WorldRecipesComponent,
     CardComponent,
-    AllRecipesByCountryComponent
+    AllRecipesByCountryComponent,
+    AllRecipesByCategoryComponent,
+    SingleRecipeComponent
   ],
   imports: [
     BrowserModule,

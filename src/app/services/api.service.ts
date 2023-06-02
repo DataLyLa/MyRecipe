@@ -15,4 +15,17 @@ export class ApiService {
     return this.http.get<any>(this.URL + `filter.php?a=${country}`);
   }
 
+
+  getRecipesByCategory(category: string): Observable<any> {
+    return this.http.get<any>(this.URL + `filter.php?c=${category}`);
+  }
+
+  getRecipes(category: string): Observable<any> {
+    return this.http.get<any>(this.URL + `filter.php?c=${category}`);
+  }
+
+  getRecipeById(idMeal: string): Observable<any> {
+    return this.http.get<any>(this.URL + `lookup.php?i=${idMeal}`);
+  }
+
 }
