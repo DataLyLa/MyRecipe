@@ -1,0 +1,23 @@
+.parent {
+    display: flex;
+    flex-direction: column;
+    // align-items: ro;w
+    flex-wrap: wrap;
+}
+
+.btn {
+    height: auto;
+    width: auto;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h3 {
+
+    font-size: 48px;
+    font-family: Tahoma, Gotham, sans-serif;
+}
