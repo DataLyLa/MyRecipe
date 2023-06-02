@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CategoryService } from '../services/category.service';
 import { Router } from '@angular/router';
 
@@ -12,6 +12,7 @@ export class WorldRecipesComponent implements OnInit {
 
   strArea: string = "";
   nationalityList: any[] = [];
+  @Input() choice: string = "";
 
 
   constructor(private categoryService: CategoryService, private router: Router) { }
