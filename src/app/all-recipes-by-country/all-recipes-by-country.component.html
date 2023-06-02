@@ -1,15 +1,21 @@
-<div *ngFor=" let country of countryList">
+<div class="d-flex flex-column py-4">
 
-    <div class="card" style="width: 18rem;">
+    <h1 class="d-flex mx-auto"> {{country}} cuisine </h1>
 
-        <img class="card-img-top" [src]="country.strMealThumb" alt="meal photo">
+    <div class="container">
 
-        <div class="card-body">
-            <p>{{country.idMeal}}</p>
-            <h5 class="card-title">{{ country.strMeal }}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+            <div class="col p-3" *ngFor=" let country of countryList">
+                <div class="card cursor-pointer">
+                    <img [src]="country.strMealThumb" class="card-img-top" [alt]="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ country.strMeal }} Meals</h5>
+                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple"> let's
+                            cook!</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
