@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../services/category.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-category-page',
@@ -8,7 +9,7 @@ import { CategoryService } from '../services/category.service';
 })
 export class CategoryPageComponent implements OnInit {
 
-  constructor(private categoryService: CategoryService) { }
+  constructor(private categoryService: CategoryService, private router: Router) { }
 
   strCategory: string = "";
   strCategoryThumb: string = "";
@@ -22,7 +23,10 @@ export class CategoryPageComponent implements OnInit {
         this.categoryList= response.categories;
       }
     )
+  }
 
+  goTORecepiesByCategories(category: string) {
+    this.router.navigate(["categories", category])
   }
 
 }
