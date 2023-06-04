@@ -20,7 +20,6 @@ export class ApiService {
     return this.http.get<any>(this.URL + `filter.php?c=${strCategory}`);
   }
 
-
   getRecipesByCategory(category: string): Observable<any> {
     return this.http.get<any>(this.URL + `filter.php?c=${category}`);
   }
@@ -33,5 +32,9 @@ export class ApiService {
     return this.http.get<any>(this.URL + `lookup.php?i=${idMeal}`);
   }
 
-
+  // Lookup a single random meal
+  // www.themealdb.com/api/json/v1/1/random.php
+  getSingleRandomMeal(): Observable<any> {
+    return this.http.get<any>(this.URL + `random.php`);
+  }
 }

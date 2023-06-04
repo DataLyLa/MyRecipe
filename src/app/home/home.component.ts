@@ -30,14 +30,13 @@ export class HomeComponent {
       this.apiService
         .getRecipesByStrCategory(this.strCategory)
         .subscribe((response) => {
-          for (let i = 0; i < 4; i++) {
+          for (let i = 0; i < 6; i++) {
             this.recipesRandom.push(
               response.meals.pop(
                 Math.floor(Math.random() * this.recipesRandom.length)
               )
             );
           }
-          console.log(this.recipesRandom);
         });
     });
   }

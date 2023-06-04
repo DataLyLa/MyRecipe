@@ -1,21 +1,21 @@
-<div class="d-flex flex-column py-4">
+<div class="d-flex flex-column py-4 lead">
 
-    <h1 class="d-flex mx-auto"> {{country}} cuisine </h1>
+  <h1 class="d-flex mx-auto"> {{country}} cuisine </h1>
 
-    <div class="container">
+  <div class="container">
 
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
-            <div class="col p-3" *ngFor=" let country of countryList">
-                <div class="card cursor-pointer">
-                    <img [src]="country.strMealThumb" class="card-img-top" [alt]="">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ country.strMeal }} Meals</h5>
-                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple"> let's
-                            cook!</button>
-                    </div>
-                </div>
-            </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+      <div class="col p-3" *ngFor=" let country of countryList">
+        <div class="card cursor-pointer">
+          <img [src]="country.strMealThumb" class="card-img-top" [alt]="">
+          <div class="card-body">
+            <h5 class="card-title">{{ country.strMeal }} Meals</h5>
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple"> let's
+              cook!</button>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
