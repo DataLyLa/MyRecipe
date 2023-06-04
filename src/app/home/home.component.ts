@@ -19,25 +19,31 @@ export class HomeComponent {
   ) {}
 
   ngOnInit(): void {
-    this.categoryService.getCategories().subscribe((response) => {
-      this.categoriesList = response.categories;
+    let i = 0;
+    while (i < 6) {
+      this.categoryService.getCategories().subscribe((response) => {
+        this.categoriesList = response.categories;
 
-      this.strCategory =
-        this.categoriesList[
-          Math.floor(Math.random() * this.categoriesList.length)
-        ].strCategory;
+        this.strCategory =
+          this.categoriesList[
+            Math.floor(Math.random() * this.categoriesList.length)
+          ].strCategory;
+        console.log(this.strCategory);
 
-      this.apiService
-        .getRecipesByStrCategory(this.strCategory)
-        .subscribe((response) => {
-          for (let i = 0; i < 6; i++) {
+        this.apiService
+          .getRecipesByStrCategory(this.strCategory)
+          .subscribe((response) => {
+            // for (let i = 0; i < 6; i++) {
             this.recipesRandom.push(
               response.meals.pop(
                 Math.floor(Math.random() * this.recipesRandom.length)
               )
             );
-          }
-        });
-    });
+            // }
+            console.log(this.recipesRandom);
+          });
+      });
+      i++;
+    }
   }
 }

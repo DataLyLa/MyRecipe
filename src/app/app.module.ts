@@ -15,6 +15,7 @@ import { AllRecipesByCountryComponent } from './all-recipes-by-country/all-recip
 import { CarouselComponent } from './carousel/carousel.component';
 import { AllRecipesByCategoryComponent } from './all-recipes-by-category/all-recipes-by-category.component';
 import { SingleRecipeComponent } from './single-recipe/single-recipe.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SingleRecipeComponent } from './single-recipe/single-recipe.component';
     AllRecipesByCountryComponent,
     CarouselComponent,
     AllRecipesByCategoryComponent,
-    SingleRecipeComponent
+    SingleRecipeComponent,
+    PageNotFoundComponent
 
   ],
   imports: [
