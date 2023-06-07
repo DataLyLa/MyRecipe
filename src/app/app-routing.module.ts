@@ -6,7 +6,7 @@ import { WorldRecipesComponent } from './world-recipes/world-recipes.component';
 import { AllRecipesByCountryComponent } from './all-recipes-by-country/all-recipes-by-country.component';
 import { AllRecipesByCategoryComponent } from './all-recipes-by-category/all-recipes-by-category.component';
 import { SingleRecipeComponent } from './single-recipe/single-recipe.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,12 +17,13 @@ const routes: Routes = [
 
   { path: 'world-recipes', component: WorldRecipesComponent },
 
+  { path: 'contact', component: ContactComponent },
+
   { path: 'all-recipes/:country', component: AllRecipesByCountryComponent },
 
   { path: 'categories/:category', component: AllRecipesByCategoryComponent },
 
   { path: 'meal/:idMeal', component: SingleRecipeComponent },
-  { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
 
 @NgModule({
