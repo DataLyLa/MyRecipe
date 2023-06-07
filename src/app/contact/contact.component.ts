@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ContactComponent implements OnInit {
   contactForm!: FormGroup;
   submitted = false;
-
+  imgURL = '../../assets/courier.png';
   constructor(private formBuilder: FormBuilder) {}
   ngOnInit() {
     this.contactForm = this.formBuilder.group({
