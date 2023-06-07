@@ -14,35 +14,45 @@
 
       <!--Grid column-->
       <div class="col-md-9 mb-md-0 mb-5">
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <form id="contact-form" name="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
           <!--Grid row-->
           <div class="row">
 
             <!--Grid column-->
-            <div class="col-md-6">
+            <div class="row-md-6">
               <div class="md-form mb-0">
                 <label for="name" class="lead form-label">Name<span> *</span></label>
-                <input type="text" id="name" name="name" class="form-control" formControlName="name">
+                <input type="text" id="name" name="name" class="form-control" formControlName="name"
+                  [ngClass]="{ 'is-invalid': (f.name.touched && f.name.invalid) ||(f.name.invalid && submitted)}"
+                  [ngClass]="{'is-valid': (f.name.touched && f.name.valid)||(submitted && f.name.valid)}" />
               </div>
-              <div *ngIf="submitted || f?.['name']?.touched" class="invalid-feedback">
-                <div *ngIf="f?.['name']?.errors?.['required']">
+              <div *ngIf="(f.name.touched && f.name.valid)||(submitted && f.name.valid)" class="text-success">
+                Looks good !
+              </div>
+              <div *ngIf="submitted || f.name.touched">
+                <span *ngIf="f.name.errors?.['required']">
                   Name is required ?
-                </div>
+                </span>
               </div>
             </div>
             <!--Grid column-->
 
             <!--Grid column-->
-            <div class="col-md-6">
+            <div class="row-md-6">
               <div class="md-form mb-0">
-                <label for="email" class="">E-mail <span> *</span></label>
-                <input type="text" id="email" name="email" class="form-control" formControlName="email">
+                <label for="email" class="lead">E-mail <span> *</span></label>
+                <input type="text" id="email" name="email" class="form-control" formControlName="email"
+                  [ngClass]="{ 'is-invalid': (f.email.touched && f.email.invalid)||(f.email.invalid && submitted)}"
+                  [ngClass]="{'is-valid': (f.email.touched && f.email.valid)||(submitted && f.email.valid)}">
               </div>
-              <div *ngIf="submitted || f?.['email']?.touched" class="invalid-feedback">
-                <div *ngIf="f?.['email']?.errors?.['required']">
+              <div *ngIf="(f.email.touched && f.email.valid)||(submitted && f.email.valid)" class="text-success">
+                Looks good !
+              </div>
+              <div *ngIf=" (f.email.touched || submitted)">
+                <span *ngIf="f.email.errors?.['required'] || f.email.invalid">
                   E-mail is required ?
-                </div>
+                </span>
               </div>
             </div>
             <!--Grid column-->
@@ -52,10 +62,10 @@
 
           <!--Grid row-->
           <div class="row">
-            <div class="col-md-12">
+            <div class="row-md-6">
               <div class="md-form mb-0">
                 <label for="subject" class="">Subject</label>
-                <input type="text" id="subject" name="subject" class="form-control">
+                <input type="text" id="subject" name="subject" class="form-control" formControlName="subject">
 
               </div>
             </div>
@@ -66,17 +76,22 @@
           <div class="row">
 
             <!--Grid column-->
-            <div class="col-md-12">
+            <div class="row-md-6">
 
               <div class="md-form">
                 <label for="message">Message <span> *</span></label>
                 <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"
-                  formControlName="message"></textarea>
-
-                <div *ngIf="submitted || f?.['message']?.touched" class="invalid-feedback">
-                  <div *ngIf="f?.['message']?.errors?.['required']">
+                  formControlName="message"
+                  [ngClass]="{ 'is-invalid': (f.message.touched && f.message.invalid)||(f.message.invalid && submitted)}"
+                  [ngClass]="{'is-valid': (f.message.touched && f.message.valid)||(submitted && f.message.valid)}"></textarea>
+                <div *ngIf="(f.message.touched && f.message.valid)||(submitted && f.message.valid)"
+                  class="text-success">
+                  Looks good !
+                </div>
+                <div *ngIf="submitted || f.message.touched">
+                  <span *ngIf="f.message.errors?.['required']">
                     Message is required ?
-                  </div>
+                  </span>
                 </div>
               </div>
 
@@ -84,12 +99,13 @@
           </div>
           <!--Grid row-->
 
+          <div class="text-center text-md-left mt-2">
+            <button class="btn btn-primary buttonContact" type="submit">Send !</button>
+          </div>
+
         </form>
 
-        <div class="text-center text-md-left mt-2">
-          <button class="btn btn-primary" type="submit">Send</button>
-        </div>
-        <div class="status"></div>
+
       </div>
       <!--Grid column-->
 
