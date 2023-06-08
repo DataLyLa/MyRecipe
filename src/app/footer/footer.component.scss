@@ -1,3 +1,21 @@
 footer a {
   text-decoration: none;
 }
+
+@media screen and (max-width: 767px) {
+  .contactUSMobile {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  footer section {
+    font-size: 14px;
+  }
+
+  .legende {
+    display: none;
+  }
+  .icone:hover ~ .legende {
+    display: inline-block;
+  }
+}
