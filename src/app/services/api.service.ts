@@ -13,7 +13,11 @@ export class ApiService {
   getRecipesByCountry(country: string): Observable<any> {
     return this.http.get<any>(this.URL + `filter.php?a=${country}`);
   }
-
+  // list all category
+  //https://www.themealdb.com/api/json/v1/1/list.php?c=list
+  getAllListCategory(): Observable<any> {
+    return this.http.get<any>(this.URL + `list.php?c=list`);
+  }
   // Search by strCategroy in recipes
   // Ex : https://www.themealdb.com/api/json/v1/1/search.php?s=goat
   getRecipesByStrCategory(strCategory: string): Observable<any> {
