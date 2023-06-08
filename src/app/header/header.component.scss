@@ -1,23 +1,42 @@
 nav {
-    box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
-    max-width: 100%;
+  box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  max-width: 100%;
 }
 
 .navbar-nav {
-    margin: 0 auto;
-    justify-content: center;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .nav-item {
-    text-align: center;
+  text-align: center;
 }
 
-button {
-    margin-right: 30px;
+nav button {
+  margin-right: 30px;
 }
 
 img {
-    margin-left: 30px;
+  margin-left: 30px;
+}
+nav form {
+  display: flex;
+  flex-direction: row;
+}
+nav form button {
+  margin-left: 2%;
+}
+nav form input {
+  margin-left: 2%;
+}
+nav form button {
+  background-color: #f68713;
+  color: aliceblue;
+}
+nav form button:hover {
+  border: 1px solid #f68713;
+  background-color: aliceblue;
+  color: #252422;
 }
