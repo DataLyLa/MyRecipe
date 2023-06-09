@@ -1,11 +1,8 @@
-.img-carousel {
-  height: 450px;
-}
 .card img {
+  width: 100%;
   transition: 0.5s;
   cursor: pointer;
 }
-
 .card {
   border-radius: 8px;
   box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
@@ -14,4 +11,13 @@
   margin-bottom: 20px;
   position: relative;
   z-index: 1;
+}
+
+.cardsRandomListHome button {
+  background-color: #f68713;
+}
+.cardsRandomListHome button:hover {
+  border: 1px solid #f68713;
+  background-color: aliceblue;
+  color: #252422;
 }

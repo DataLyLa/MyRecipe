@@ -1,0 +1,136 @@
+<div class="container lead contactUS">
+
+  <!--Section: Contact v.2-->
+  <section class="mb-4">
+
+    <!--Section heading-->
+    <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+    <!--Section description-->
+    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions ? Please do not hesitate to contact us
+      directly. Our team will come back to you within
+      a matter of hours to help you.</p>
+
+    <div class="row">
+
+      <!--Grid column-->
+      <div class="col-md-6 mb-md-0 mb-5">
+        <form id="contact-form" name="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+          <!--Grid row-->
+          <div class="row">
+
+            <!--Grid column-->
+            <div class="row-md-6">
+              <div class="md-form mb-0">
+                <label for="name" class="lead form-label">Name<span> *</span></label>
+                <input type="text" id="name" name="name" class="form-control" formControlName="name"
+                  [ngClass]="{ 'is-invalid': (f.name.touched && f.name.invalid) ||(f.name.invalid && submitted)}"
+                  [ngClass]="{'is-valid': (f.name.touched && f.name.valid)||(submitted && f.name.valid)}" />
+              </div>
+              <div *ngIf="(f.name.touched && f.name.valid)||(submitted && f.name.valid)" class="text-success">
+                Looks good !
+              </div>
+              <div *ngIf="submitted || f.name.touched">
+                <span *ngIf="f.name.errors?.['required']">
+                  Name is required ?
+                </span>
+              </div>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="row-md-6">
+              <div class="md-form mb-0">
+                <label for="email" class="lead">E-mail <span> *</span></label>
+                <input type="text" id="email" name="email" class="form-control" formControlName="email"
+                  [ngClass]="{ 'is-invalid': (f.email.touched && f.email.invalid)||(f.email.invalid && submitted)}"
+                  [ngClass]="{'is-valid': (f.email.touched && f.email.valid)||(submitted && f.email.valid)}">
+              </div>
+              <div *ngIf="(f.email.touched && f.email.valid)||(submitted && f.email.valid)" class="text-success">
+                Looks good !
+              </div>
+              <div *ngIf=" (f.email.touched || submitted)">
+                <span *ngIf="f.email.errors?.['required'] || f.email.invalid">
+                  E-mail is required ?
+                </span>
+              </div>
+            </div>
+            <!--Grid column-->
+
+          </div>
+          <!--Grid row-->
+
+          <!--Grid row-->
+          <div class="row">
+            <div class="row-md-6">
+              <div class="md-form mb-0">
+                <label for="subject" class="">Subject</label>
+                <input type="text" id="subject" name="subject" class="form-control" formControlName="subject">
+
+              </div>
+            </div>
+          </div>
+          <!--Grid row-->
+
+          <!--Grid row-->
+          <div class="row">
+
+            <!--Grid column-->
+            <div class="row-md-6">
+
+              <div class="md-form">
+                <label for="message">Message <span> *</span></label>
+                <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"
+                  formControlName="message"
+                  [ngClass]="{ 'is-invalid': (f.message.touched && f.message.invalid)||(f.message.invalid && submitted)}"
+                  [ngClass]="{'is-valid': (f.message.touched && f.message.valid)||(submitted && f.message.valid)}"></textarea>
+                <div *ngIf="(f.message.touched && f.message.valid)||(submitted && f.message.valid)"
+                  class="text-success">
+                  Looks good !
+                </div>
+                <div *ngIf="submitted || f.message.touched">
+                  <span *ngIf="f.message.errors?.['required']">
+                    Message is required ?
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!--Grid row-->
+
+          <div class="text-center text-md-left mt-2">
+            <button class="btn btn-primary buttonContact" type="submit">Send !</button>
+          </div>
+
+        </form>
+
+
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-md-6 text-center imgURLContact">
+
+        <img [src]="imgURL" alt="send" />
+        <!-- <ul class="list-unstyled mb-0">
+          <li><i class="fas fa-map-marker-alt fa-2x"></i>
+            <p>Paris, 75020, FR</p>
+          </li>
+
+          <li><i class="fas fa-phone mt-4 fa-2x"></i>
+            <p>+ 01 234 567 89</p>
+          </li>
+
+          <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+            <p>amazingrecipes@contact.com</p>
+          </li>
+        </ul> -->
+      </div>
+      <!--Grid column-->
+
+    </div>
+
+  </section>
+  <!--Section: Contact v.2-->
+</div>
