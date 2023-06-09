@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CategoryService } from '../services/category.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-card',
@@ -14,9 +16,11 @@ export class CardComponent implements OnInit {
       title: '',
       subtitle: '',
     }
+ 
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void { }
+
 
 }
