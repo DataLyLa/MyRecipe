@@ -1,5 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { ApiService } from './../services/api.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-all-recipes',
@@ -11,7 +12,7 @@ export class AllRecipesComponent {
 
   listOfMeal: any[] = [];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private router: Router) {}
 
   onSearchTextEntered(searchValue: any) {
     this.searchText = searchValue;
@@ -22,5 +23,9 @@ export class AllRecipesComponent {
       .subscribe((response) => {
         this.listOfMeal = response.meals;
       });
+  }
+
+  getRecipeById(idMeal: string): void {
+    this.router.navigate(['meal', idMeal]);
   }
 }
