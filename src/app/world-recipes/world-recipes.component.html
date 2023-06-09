@@ -4,7 +4,7 @@
 
 
     <input class="form-control" list="countries" id="country-choice" name="country-choice" [(ngModel)]="choice"
-        placeholder="Type a country name..." style="width: 300px;">
+        placeholder="Choose a country name..." style="width: 300px;">
     <datalist id="countries">
         <option *ngFor="let area of nationalityList" [value]="area.strArea">
     </datalist>

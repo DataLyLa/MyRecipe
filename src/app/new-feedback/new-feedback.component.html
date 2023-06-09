@@ -1,0 +1,27 @@
+<p>new-feedback works!</p>
+<h2>{{idMeal}}</h2>
+<!-- new-feedback.component.html -->
+<form (ngSubmit)="submitFeedback()">
+    <div>
+      <label for="idMeal">ID Meal:</label>
+      <input type="text" id="idMeal" name="idMeal" [(ngModel)]="idMeal" required>
+    </div>
+  
+    <div>
+      <label for="userFirstname">First Name:</label>
+      <input type="text" id="userFirstname" name="userFirstname" [(ngModel)]="userFirstname" required>
+    </div>
+  
+    <div>
+      <label for="userLastname">Last Name:</label>
+      <input type="text" id="userLastname" name="userLastname" [(ngModel)]="userLastname" required>
+    </div>
+  
+    <div>
+      <label for="comment">Comment:</label>
+      <textarea id="comment" name="comment" [(ngModel)]="comment" required></textarea>
+    </div>
+  
+    <button type="submit">Submit Feedback</button>
+  </form>
+  

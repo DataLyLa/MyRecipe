@@ -6,6 +6,7 @@ import { WorldRecipesComponent } from './world-recipes/world-recipes.component';
 import { AllRecipesByCountryComponent } from './all-recipes-by-country/all-recipes-by-country.component';
 import { AllRecipesByCategoryComponent } from './all-recipes-by-category/all-recipes-by-category.component';
 import { SingleRecipeComponent } from './single-recipe/single-recipe.component';
+import { FeedbacksListComponent } from './feedbacks-list/feedbacks-list.component';
 
 const routes: Routes = [
 
@@ -16,6 +17,8 @@ const routes: Routes = [
   { path: 'categories', component: CategoryPageComponent },
 
   { path: 'world-recipes', component: WorldRecipesComponent },
+
+  {path: 'feedbacks', component: FeedbacksListComponent},
 
   { path: 'all-recipes/:country', component: AllRecipesByCountryComponent },
 
