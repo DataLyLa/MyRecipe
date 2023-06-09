@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,13 +11,14 @@ import { CategoryPageComponent } from './category-page/category-page.component';
 import { WorldRecipesComponent } from './world-recipes/world-recipes.component';
 import { CardComponent } from './card/card.component';
 import { AllRecipesByCountryComponent } from './all-recipes-by-country/all-recipes-by-country.component';
+import { FeedbacksListComponent } from './feedbacks-list/feedbacks-list.component';
+import { NewFeedbackComponent } from './new-feedback/new-feedback.component';
+import { SingleFeedbackComponent } from './single-feedback/single-feedback.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CarouselComponent } from './carousel/carousel.component';
 import { AllRecipesByCategoryComponent } from './all-recipes-by-category/all-recipes-by-category.component';
 import { SingleRecipeComponent } from './single-recipe/single-recipe.component';
-import { FeedbacksListComponent } from './feedbacks-list/feedbacks-list.component';
-import { NewFeedbackComponent } from './new-feedback/new-feedback.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SingleFeedbackComponent } from './single-feedback/single-feedback.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +35,8 @@ import { SingleFeedbackComponent } from './single-feedback/single-feedback.compo
     SingleRecipeComponent,
     FeedbacksListComponent,
     NewFeedbackComponent,
-    SingleFeedbackComponent
-
+    SingleFeedbackComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +46,6 @@ import { SingleFeedbackComponent } from './single-feedback/single-feedback.compo
     ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

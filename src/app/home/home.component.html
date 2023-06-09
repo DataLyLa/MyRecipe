@@ -1,29 +1,30 @@
-<!-- insertion component world recipes -->
-<app-world-recipes></app-world-recipes>
-
-
 <!-- Component carousel -->
 <app-carousel></app-carousel>
 <!-- End component carousel -->
 
+<!-- insertion component world recipes -->
+<app-world-recipes></app-world-recipes>
 
-<!-- Debut component "Cards" pour afficher au moins 6 catégries aléatoirement -->
-<section class="container">
-  <h2 class="text-center my-5 lead">
-    One day, one recipe ! Discover a new economical, easy and quick cooking recipe every day
+
+<!-- Start component "Cards" to display at least 6 categories randomly -->
+
+<section class="container cardsRandomListHome">
+  <h2 class="text-center my-4 lead">
+    Every day , a new recipe!
   </h2>
-
-
-
-
-  <div class="row lead">
-    <div class="col-lg" *ngFor="let recipes of recipesRandom">
-      <div class="card">
+  <div class="row row-cols-1 row-cols-md-3 g-4 lead">
+    <div *ngFor="let recipes of recipesRandom" class="col">
+      <div class="card h-100">
         <img [src]="recipes.strMealThumb" class="card-img-top" [alt]="recipes.strMeal">
         <div class="card-body">
-          <h5 class="card-title">Id : {{recipes.idMeal}}</h5>
-          <p class="card-text">Title : {{recipes.strMeal}}</p>
-          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple">See more !</button>
+          <p class="text-center"> {{recipes.strMeal}}</p>
+          <div class="col d-flex justify-content-center">
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple"> Let's cook!</button>
+          </div>
         </div>
       </div>
     </div>
+
+  </div>
+
+</section>
