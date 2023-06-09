@@ -1,8 +1,5 @@
-.img-carousel {
-  height: 450px;
-}
 .card img {
-  height: 414px;
+  width: 100%;
   transition: 0.5s;
   cursor: pointer;
 }
@@ -15,4 +12,21 @@
   margin-bottom: 20px;
   position: relative;
   z-index: 1;
+}
+
+.cardsRandomListHome button {
+  background-color: #f68713;
+}
+
+.cardsRandomListHome button:hover {
+  border: 1px solid #f68713;
+  background-color: aliceblue;
+  color: #252422;
+}
+
+h2 {
+  margin: 1em;
+  font-size: larger;
+  font-family: Tahoma, Gotham, sans-serif;
+
 }
