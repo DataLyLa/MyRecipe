@@ -19,7 +19,8 @@
         <div class="card-body">
           <p class="text-center"> {{recipes.strMeal}}</p>
           <div class="col d-flex justify-content-center">
-            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple"> Let's cook!</button>
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple"
+              (click)=" getRecipeById(recipes.idMeal)"> Let's cook!</button>
           </div>
         </div>
       </div>
