@@ -24,6 +24,12 @@ export class ApiService {
     return this.http.get<any>(this.URL + `filter.php?c=${strCategory}`);
   }
 
+  // Search meal by name
+  // Ex: www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
+  getSearchMealByName(strMeal: string): Observable<any> {
+    return this.http.get<any>(this.URL + `search.php?s=${strMeal}`);
+  }
+
   getRecipesByCategory(category: string): Observable<any> {
     return this.http.get<any>(this.URL + `filter.php?c=${category}`);
   }
