@@ -6,6 +6,15 @@ footer a {
   .contactUSMobile {
     display: none;
   }
+  footer section {
+    line-height: 0.5em;
+  }
+  footer {
+    margin: 0px;
+  }
+  footer h6 {
+    margin: 0%;
+  }
 }
 @media screen and (min-width: 768px) {
   footer section {
