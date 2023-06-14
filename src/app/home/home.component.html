@@ -18,7 +18,8 @@
         <div class="card-body">
           <h5 class="card-title">Id : {{recipes.idMeal}}</h5>
           <p class="card-text">Title : {{recipes.strMeal}}</p>
-          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple">See more !</button>
+          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple"
+            (click)=" getRecipeById(recipes.idMeal)">See more !</button>
         </div>
       </div>
     </div>
