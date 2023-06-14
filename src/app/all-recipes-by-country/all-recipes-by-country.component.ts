@@ -21,6 +21,8 @@ export class AllRecipesByCountryComponent implements OnInit {
           .getRecipesByCountry(this.country)
           .subscribe((response) => {
             this.countryList = response.meals;
+
+            console.log(this.country);
           });
       }
     });
