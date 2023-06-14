@@ -17,7 +17,6 @@
     justify-content: center;
 }
 
-
 .titre {
     position: absolute;
     display: flex;
@@ -31,12 +30,6 @@
     margin: 0;
     padding-left: 0;
     padding-right: 0;
-}
-
-
-.content-right {
-    text-align: justify;
-    font-size: 14px;
 }
 
 .content-right h3 {
@@ -59,7 +52,7 @@ ul li::before {
 
 ul li {
     text-align: left;
-  }
+}
 
 .content {
     display: grid;
@@ -70,11 +63,19 @@ ul li {
     margin: 20px;
 }
 
-
 .country {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     text-align: left;
     grid-area: 1 / 1 / 2 / 2;
-    margin: 20px;
+    margin: 10px;
+    padding-left: 40px;
+}
+
+.country img {
+    width: 30px;
+    height: 30px;
 }
 
 .ingredient {
@@ -86,42 +87,62 @@ ul li {
     text-align: left;
     grid-area: 3 / 1 / 4 / 2;
     margin: 20px;
+    padding-top: 20px;
 }
 
 .content-right {
     grid-area: 1 / 2 / 4 / 3;
     margin: 20px;
-    order:2
-}
-
-.content-left{
-    order:1;
+    text-align: justify;
+    font-size: 14px;
 }
 
 
 @media (max-width: 768px) {
+    .container {
+        display: block;
+        margin: 20px;
+    }
+
     img {
         max-width: 80%;
+        display: block;
+        margin: 0 auto;
     }
-    .container {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: auto;
-        grid-column-gap: 10px;
-        grid-row-gap: 30px;
-        margin: 20px;
-      }
-    
-      .content {
-        flex-direction: row;
-      }
-    
-      .content-left {
-        order: 2;
-      }
-    
-      .content-right {
-        order: 1;
-      }
-    
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content-left,
+    .content-right {
+        width: 100%;
+        order: initial;
+    }
+
+    .country {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        /* Ajout de la propriété flex-direction */
+        gap: 10px;
+        grid-area: 1 / 1 / 2 / 2;
+        margin: 10px;
+    }
+
+    .country img {
+        width: 30px;
+        height: 30px;
+        display: block;
+    }
+
+    .origin-country {
+        margin: 0;
+        /* Ajout de la propriété margin pour supprimer l'espace supplémentaire */
+    }
 }

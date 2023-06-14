@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ApiService } from '../services/api.service';
 import { Ingredients } from '../models/ingredients.model';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 
 
 
@@ -36,7 +38,7 @@ export class SingleRecipeComponent implements OnInit {
   router: any;
 
 
-  constructor(private route: ActivatedRoute, private apiService: ApiService) { }
+  constructor(private route: ActivatedRoute, private apiService: ApiService, private sanitizer: DomSanitizer) { }
 
 
   @ViewChild('instructionsContainer', { static: true }) instructionsContainer!: ElementRef<any>;
@@ -97,13 +99,15 @@ export class SingleRecipeComponent implements OnInit {
 
   }
 
-  convertToEmbedLink(url: string): string {
+  convertToEmbedLink(url: string): SafeResourceUrl {
     const videoId = this.extractVideoId(url);
     if (videoId) {
-      return `https://www.youtube.com/embed/${videoId}`;
+      const sanitizedUrl = `https://www.youtube.com/embed/${videoId}`;
+      return this.sanitizer.bypassSecurityTrustResourceUrl(sanitizedUrl);
     }
     return '';
   }
+  
   
   extractVideoId(url: string): string | null {
     const regex = /[?&]v=([^&#]*)/;   

@@ -2,6 +2,7 @@
     width: 100%;
     transition: 0.5s;
     cursor: pointer;
+    height: 320px;
 }
 
 .card {
@@ -13,3 +14,7 @@
     position: relative;
     z-index: 1;
 }
+
+.col p-3 {
+    height: 334px;
+  }

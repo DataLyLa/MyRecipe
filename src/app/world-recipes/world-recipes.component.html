@@ -3,13 +3,32 @@
   <div class="container lead">
     <label for="country-choice" class="form-label"></label>
 
-    <input class="form-control" list="countries" id="country-choice" name="country-choice" [(ngModel)]="choice"
-      placeholder="Type a country name..." style="width: 300px;">
-    <datalist id="countries">
-      <option *ngFor="let area of nationalityList" [value]="area.strArea">
-    </datalist>
+    <div class="input-container">
 
-    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple"
-      (click)="goTORecepiesByCountry(choice)"> Search </button>
+
+      <input class="form-control" list="countries" id="country-choice" name="country-choice" [(ngModel)]="choice"
+        placeholder="Type a country name..." style="width: 300px;" required>
+
+      <datalist id="countries">
+        <option *ngFor="let area of nationalityList" [value]="area.strArea">
+      </datalist>
+
+      <select [(ngModel)]="choice" class="select-with-icons">
+        <option *ngFor="let area of nationalityList" [value]="area.strArea">
+          <img [src]="getIconPath(area.strArea)" class="flag-icon" alt="{{ area.strArea }} flag">
+          {{area.strArea}}
+        </option>
+      </select>
+
+      
+
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple"
+        (click)="goTORecepiesByCountry(choice)"> Search </button>
+    </div>
+
+
+    <p *ngIf="showErrorMessage" class="error-message">Please select a country</p>
+
+
   </div>
 </div>
