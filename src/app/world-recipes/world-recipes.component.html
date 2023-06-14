@@ -1,22 +1,18 @@
 <div>
-  <h3 class="text-center my-4 lead">You can look also look for recipes from all over the world</h3>
-  <div class="container lead">
+  <h3 class="text-center my-4 lead">Choose a country to discover its cuisine</h3>
+  <div class="container">
     <label for="country-choice" class="form-label"></label>
 
     <div class="input-container">
 
 
-      <input class="form-control" list="countries" id="country-choice" name="country-choice" [(ngModel)]="choice"
-        placeholder="Type a country name..." style="width: 300px;" required>
+      <!-- <input class="form-control" list="countries" id="country-choice" name="country-choice" [(ngModel)]="choice"
+        placeholder="Type a country name..." style="width: 300px;" required> -->
 
-      <datalist id="countries">
-        <option *ngFor="let area of nationalityList" [value]="area.strArea">
-      </datalist>
 
-      <select [(ngModel)]="choice" class="select-with-icons">
+      <select [(ngModel)]="choice" class="select-with-icons" required>
         <option *ngFor="let area of nationalityList" [value]="area.strArea">
-          <img [src]="getIconPath(area.strArea)" class="flag-icon" alt="{{ area.strArea }} flag">
-          {{area.strArea}}
+          {{getFlag(area.strArea)}} {{area.strArea}}
         </option>
       </select>
 
