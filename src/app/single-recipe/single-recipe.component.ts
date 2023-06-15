@@ -12,7 +12,7 @@ import { CategoryService } from '../services/category.service';
   templateUrl: './single-recipe.component.html',
   styleUrls: ['./single-recipe.component.scss']
 })
-export class SingleRecipeComponent implements OnInit  {
+export class SingleRecipeComponent implements OnInit {
 
   idMeal: string = "";
   meal: any = {};
@@ -54,7 +54,7 @@ export class SingleRecipeComponent implements OnInit  {
 
 
   ngOnInit(): void {
-    
+
     this.route.paramMap.subscribe((params: ParamMap) => {
       if (params.get("idMeal")) {
         this.idMeal = params.get('idMeal') + "";
@@ -62,7 +62,7 @@ export class SingleRecipeComponent implements OnInit  {
           response => {
             this.meal = response.meals[0];
 
-            this.ingredients= [];
+            this.ingredients = [];
 
 
             Object.keys(this.meal).forEach(key => {
@@ -74,7 +74,7 @@ export class SingleRecipeComponent implements OnInit  {
               }
             });
 
-            this.ingredientsMeasures = []; 
+            this.ingredientsMeasures = [];
 
             for (let i = 0; i < this.ingredients.length; i++) {
               let ingredientsMeasures: Ingredient = {
@@ -87,7 +87,9 @@ export class SingleRecipeComponent implements OnInit  {
             this.apiService
               .getRecipesByCategory(this.meal.strCategory)
               .subscribe((response) => {
-                this.recipesRandom = response.meals.slice(0, 3);
+                const allRecipes = response.meals;
+                const filteredRecipes = allRecipes.filter((recipe: any) => recipe.idMeal !== this.idMeal);
+                this.recipesRandom = filteredRecipes.slice(0, 3);
               });
 
           }
