@@ -1,2 +1,4 @@
 <p>feedbacks-list works!</p>
-<app-single-feedback *ngFor="let feedback of feedbacks$ | async" [feedback]="feedback"></app-single-feedback>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3" >
+<app-single-feedback  *ngFor="let feedback of feedbacks$ | async" [feedback]="feedback" [showOnFeedback]="showOnFeedback"></app-single-feedback>
+</div>

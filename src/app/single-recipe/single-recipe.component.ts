@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ApiService } from '../services/api.service';
 import { Ingredients } from '../models/ingredients.model';
@@ -15,7 +15,9 @@ import { FeedbacksService } from '../services/feedbacks.service';
 })
 export class SingleRecipeComponent implements OnInit {
   feedbacks$!: Observable<Feedbacks[]>
-  idMeal: string = "";
+  @Input() idMeal: string = "";
+  strMeal: string = ""
+  @Input() showOnFeedback: boolean = false
   meal: any = {};
   ingredients: any[] = []; // Déclarez un tableau pour stocker les ingrédients
   tags: any[] = [];
@@ -48,7 +50,7 @@ export class SingleRecipeComponent implements OnInit {
   ngOnInit(): void {
 
    
-
+    this.showOnFeedback = false
     this.route.paramMap.subscribe((params: ParamMap) => {
       if (params.get("idMeal")) {
         this.idMeal = params.get('idMeal') + "";
@@ -81,6 +83,8 @@ export class SingleRecipeComponent implements OnInit {
       }
     }
     )
+    this.idMeal=this.idMeal
+    this.strMeal= this.strMeal
    this.feedbacks$=this.feedbacksService.getFeedbacksByIdMeal(this.idMeal)
 
 
@@ -120,6 +124,8 @@ export class SingleRecipeComponent implements OnInit {
   }
 
 }
+
+
 
 
 

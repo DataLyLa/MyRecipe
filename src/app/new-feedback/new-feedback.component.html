@@ -1,27 +1,57 @@
-<p>new-feedback works!</p>
-<h2>{{idMeal}}</h2>
-<!-- new-feedback.component.html -->
-<form (ngSubmit)="submitFeedback()">
-    <div>
-      <label for="idMeal">ID Meal:</label>
-      <input type="text" id="idMeal" name="idMeal" [(ngModel)]="idMeal" required>
+<div class="container">
+<form id="feedback-form" name="feedback-form" (ngSubmit)="submitFeedback()" >
+  
+  <div class="container d-flex justify-content-center mt-100">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body text-center"> 
+                 <span class="myratings">{{rating}}</span>
+                    <h4 class="mt-1">Rate us</h4>
+
+            <fieldset class="rating">
+              <input type="radio" id="star5" name="rating" value="5" [(ngModel)]="rating"/><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+              <input type="radio" id="star4half" name="rating" value="4.5" [(ngModel)]="rating"/><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+              <input type="radio" id="star4" name="rating" value="4" [(ngModel)]="rating"/><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+              <input type="radio" id="star3half" name="rating" value="3.5" [(ngModel)]="rating"/><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+              <input type="radio" id="star3" name="rating" value="3" [(ngModel)]="rating"/><label class = "full" for="star3" title="Meh - 3 stars"></label>
+              <input type="radio" id="star2half" name="rating" value="2.5" [(ngModel)]="rating"/><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+              <input type="radio" id="star2" name="rating" value="2" [(ngModel)]="rating"/><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+              <input type="radio" id="star1half" name="rating" value="1.5" [(ngModel)]="rating"/><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+              <input type="radio" id="star1" name="rating" value="1" [(ngModel)]="rating"/><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+              <input type="radio" id="starhalf" name="rating" value="0.5" [(ngModel)]="rating"/><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+              <input type="radio" class="reset-option" name="rating" value="reset" />
+          </fieldset>
     </div>
+ 
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+      <div class="p-4">
+    <label for="userFirstname">Firstname:</label>
+ 
+    <input type="text" id="userFirstname" name="userFirstname" [(ngModel)]="userFirstname" required #userFirstnameInput="ngModel"> 
+      <div *ngIf="userFirstnameInput.errors?.required">Firstname is required</div>
+    </div></div>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+    <div class="p-4">
+    <label for="userLastname">Lastname:</label>
+    <input type="text" id="userLastname" name="userLastname" [(ngModel)]="userLastname" required #userLastnameInput="ngModel">
+      <div  
+      *ngIf="userLastnameInput.errors?.required">Lastname is required</div>
+    </div></div>
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-sm-3">
+    <div class="p-4">
+    <label for="comment">Comment:</label>
+    <textarea id="comment" name="comment" [(ngModel)]="comment" required #commentInput="ngModel"></textarea>
+      <div *ngIf="commentInput.errors?.required">Comment is required</div>
+    </div></div>
   
-    <div>
-      <label for="userFirstname">First Name:</label>
-      <input type="text" id="userFirstname" name="userFirstname" [(ngModel)]="userFirstname" required>
-    </div>
   
-    <div>
-      <label for="userLastname">Last Name:</label>
-      <input type="text" id="userLastname" name="userLastname" [(ngModel)]="userLastname" required>
-    </div>
-  
-    <div>
-      <label for="comment">Comment:</label>
-      <textarea id="comment" name="comment" [(ngModel)]="comment" required></textarea>
-    </div>
-  
-    <button type="submit">Submit Feedback</button>
-  </form>
-  
+  <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple" (click)="submitFeedback()">Submit Feedback</button>
+</div>
+</div>
+</div></div>
+</form>
+</div>
