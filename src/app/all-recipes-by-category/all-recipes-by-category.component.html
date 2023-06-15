@@ -4,17 +4,10 @@
 
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
-<<<<<<< HEAD
       <div class="col p-3" *ngFor="let category of categoryList" (click)="getRecipeById(category.idMeal)">
         <div class="card cursor-pointer">
           <img class="card-img-top" [src]="category.strMealThumb" alt="category meal photo">
           <div class="card-body text-center">
-=======
-      <div class="col p-3" *ngFor="let category of categoryList">
-        <div class="card cursor-pointer">
-          <img class="card-img-top" [src]="category.strMealThumb" alt="category meal photo">
-          <div class="card-body" (click)="getRecipeById(category.idMeal)">
->>>>>>> 0365a4e84a39fce772c01d6a8e824eb171295dac
             <h5 class="card-title">{{ category.strMeal }}</h5>
             <p class="card-text"></p> <button class="btn btn-success" data-bs-toggle="modal"
               data-bs-target="#exemple">Discover this meal</button>
