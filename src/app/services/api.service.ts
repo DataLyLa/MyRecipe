@@ -47,4 +47,10 @@ export class ApiService {
   getSingleRandomMeal(): Observable<any> {
     return this.http.get<any>(this.URL + `random.php`);
   }
+
+  //     List all meals by first letter
+  // www.themealdb.com/api/json/v1/1/search.php?f=a
+  getlistAllMealsByFirstLetter(letter: any): Observable<any> {
+    return this.http.get<any>(this.URL + `search.php?f=${letter}`);
+  }
 }
