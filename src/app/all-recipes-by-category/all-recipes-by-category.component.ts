@@ -30,6 +30,7 @@ export class AllRecipesByCategoryComponent {
     });
 
   }
+  
   getRecipeById(idMeal: string): void {
     this.router.navigate(["meal", idMeal])
   };

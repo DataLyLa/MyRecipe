@@ -39,6 +39,7 @@ export class WorldRecipesComponent implements OnInit {
       this.showErrorMessage = true;
     }
   }
+  
 
   getFlag(area: string) {
     for (let flag of this.flags) {
