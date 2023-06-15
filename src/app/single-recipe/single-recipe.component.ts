@@ -1,7 +1,9 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ApiService } from '../services/api.service';
 import { Ingredients } from '../models/ingredients.model';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { CategoryService } from '../services/category.service';
 
 
 
@@ -10,7 +12,7 @@ import { Ingredients } from '../models/ingredients.model';
   templateUrl: './single-recipe.component.html',
   styleUrls: ['./single-recipe.component.scss']
 })
-export class SingleRecipeComponent implements OnInit {
+export class SingleRecipeComponent implements OnInit  {
 
   idMeal: string = "";
   meal: any = {};
@@ -18,7 +20,12 @@ export class SingleRecipeComponent implements OnInit {
   tags: any[] = [];
   measures: any[] = []; // Déclarez un tableau pour stocker les mesures
   key: string[] = [];
-  ingredientsMeasures: Ingredient []= [];
+  ingredientsMeasures: Ingredient[] = [];
+
+  categoriesList: any[] = [];
+  strCategory: string = '';
+  recipesRandom: Array<any> = [];
+  RecipesByStrCategories = <any>{};
 
 
 
@@ -33,35 +40,43 @@ export class SingleRecipeComponent implements OnInit {
     strMeasure3: "1/4 cup",
     // ...
   };
-  router: any;
 
+  constructor(
+    private route: ActivatedRoute,
+    private apiService: ApiService,
+    private sanitizer: DomSanitizer,
+    private router: Router,
+    private renderer: Renderer2) { }
 
-  constructor(private route: ActivatedRoute, private apiService: ApiService) { }
 
 
   @ViewChild('instructionsContainer', { static: true }) instructionsContainer!: ElementRef<any>;
 
 
   ngOnInit(): void {
-
+    
     this.route.paramMap.subscribe((params: ParamMap) => {
       if (params.get("idMeal")) {
         this.idMeal = params.get('idMeal') + "";
         this.apiService.getRecipeById(this.idMeal).subscribe(
           response => {
             this.meal = response.meals[0];
-            console.log(JSON.stringify(this.meal));
+
+            this.ingredients= [];
+
 
             Object.keys(this.meal).forEach(key => {
               if (key.startsWith('strIngredient') && this.meal[key]) {
                 this.ingredients.push(this.meal[key]);
               } else if (key.startsWith('strMeasure') && this.meal[key]) {
                 this.measures.push(this.meal[key]);
-    
-              }
-            }); 
 
-            for(let i=0; i<this.ingredients.length; i++) {
+              }
+            });
+
+            this.ingredientsMeasures = []; 
+
+            for (let i = 0; i < this.ingredients.length; i++) {
               let ingredientsMeasures: Ingredient = {
                 name: this.ingredients[i],
                 measure: this.measures[i]
@@ -69,6 +84,11 @@ export class SingleRecipeComponent implements OnInit {
               this.ingredientsMeasures.push(ingredientsMeasures);
 
             }
+            this.apiService
+              .getRecipesByCategory(this.meal.strCategory)
+              .subscribe((response) => {
+                this.recipesRandom = response.meals.slice(0, 3);
+              });
 
           }
         )
@@ -76,6 +96,7 @@ export class SingleRecipeComponent implements OnInit {
       }
     }
     )
+
 
 
 
@@ -95,26 +116,46 @@ export class SingleRecipeComponent implements OnInit {
 
     });
 
+
   }
 
-  convertToEmbedLink(url: string): string {
+
+  getRecipeById(idMeal: string): void {
+    this.router.navigate(["meal", idMeal]);
+    this.scrollToTop();
+  };
+
+  scrollToTop(): void {
+    const element = document.documentElement || document.body;
+    this.renderer.setProperty(element, 'scrollTop', 0);
+  }
+
+
+  convertToEmbedLink(url: string): SafeResourceUrl {
     const videoId = this.extractVideoId(url);
     if (videoId) {
-      return `https://www.youtube.com/embed/${videoId}`;
+      const sanitizedUrl = `https://www.youtube.com/embed/${videoId}`;
+      return this.sanitizer.bypassSecurityTrustResourceUrl(sanitizedUrl);
     }
     return '';
   }
-  
+
+
   extractVideoId(url: string): string | null {
-    const regex = /[?&]v=([^&#]*)/;   
-     const match = url.match(regex);
+    const regex = /[?&]v=([^&#]*)/;
+    const match = url.match(regex);
     if (match) {
       return match[1];
     }
     return null;
   }
 
+
+
+
+
 }
+
 
 
 

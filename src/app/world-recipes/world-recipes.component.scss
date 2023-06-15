@@ -1,17 +1,42 @@
-.btn {
-    height: auto;
-    width: auto;
+h3 {
+    margin: 40px;
+    font-size: 30px;
+    font-family: Tahoma, Gotham, sans-serif;
+
 }
+
 
 .container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
-h3 {
-    margin: 1em;
-    font-size: 48px;
-    font-family: Tahoma, Gotham, sans-serif;
 
+.input-container {
+    display: flex;
+    position: relative;
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+
+.error-message {
+    display: flex;
+    flex-direction: column;
+    grid-area: 2 / 1 / 3 / 2;
+    margin-top: 10px;
+    font-size: 14px;
+    color: orangered;
+    margin-right: 150px;
+}
+
+
+
+.select {
+    margin-right: 20px;
+}
+
+.select-with-icons {
+width : 250px;
+height: 38.21px;
 }
