@@ -1,3 +1,15 @@
-.carousel-item {
-  height: 70vh;
+.carousel .carousel-inner {
+  height: 75vh;
+}
+.carousel .carousel-item {
+  height: 75vh;
+}
+
+@media screen and (max-width: 670px) {
+  .carousel .carousel-inner {
+    height: 100%;
+  }
+  .carousel .carousel-item {
+    height: 10%;
+  }
 }

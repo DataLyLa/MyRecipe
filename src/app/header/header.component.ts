@@ -1,26 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
-
-  constructor() { }
-
+export class HeaderComponent implements OnInit {
+  searchText: string = '';
+  constructor(private router: Router) {}
 
   myFunction() {
-    const navbarNav = document.getElementById("navbarNav");
+    const navbarNav = document.getElementById('navbarNav');
     if (navbarNav) {
-      navbarNav.classList.toggle("show");
+      navbarNav.classList.toggle('show');
     }
   }
 
   // Fermer le menu déroulant si l'utilisateur clique en dehors de celui-ci
   windowOnClick(event: MouseEvent) {
-    if (!(event.target instanceof Element) || !event.target.matches('.navbar-toggler')) {
-      const dropdowns = document.getElementsByClassName(".navbar-toggler");
+    if (
+      !(event.target instanceof Element) ||
+      !event.target.matches('.navbar-toggler')
+    ) {
+      const dropdowns = document.getElementsByClassName('.navbar-toggler');
       for (let i = 0; i < dropdowns.length; i++) {
         const openDropdown = dropdowns[i];
         if (openDropdown.classList.contains('show')) {
@@ -38,4 +41,9 @@ export class HeaderComponent {
     window.removeEventListener('click', this.windowOnClick);
   }
 
+  onSearchTextEntered(searchValue: any) {
+    this.searchText = searchValue;
+    // console.log(searchValue);
+    console.log(this.searchText);
+  }
 }
