@@ -13,3 +13,19 @@
     position: relative;
     z-index: 1;
 }
+
+h1 {
+    margin: 1em;
+    font-size: 48px;
+    font-family: Tahoma, Gotham, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h5 {
+    text-align: center;
+}

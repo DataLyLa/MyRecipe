@@ -1,16 +1,19 @@
 .allRecipesByName button {
   background-color: #f68713;
 }
+
 .allRecipesByName button:hover {
   border: 1px solid #f68713;
   background-color: aliceblue;
   color: #252422;
 }
+
 .card img {
   width: 100%;
   transition: 0.5s;
   cursor: pointer;
 }
+
 .card {
   border-radius: 8px;
   box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
@@ -19,4 +22,22 @@
   margin-bottom: 20px;
   position: relative;
   z-index: 1;
+}
+
+h1 {
+
+  margin: 1em;
+  font-size: 48px;
+  font-family: Tahoma, Gotham, sans-serif;
+
+}
+
+h5 {
+  text-align: center;
+}
+
+.ctr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -4,14 +4,11 @@
 
 <!-- insertion component world recipes -->
 <app-world-recipes></app-world-recipes>
-
+<!-- End component world recipies -->
 
 <!-- Start component "Cards" to display at least 6 categories randomly -->
-
 <section class="container cardsRandomListHome">
-  <h2 class="text-center my-4 lead">
-    Every day , a new recipe!
-  </h2>
+  <h2 class="text-center my-4 lead"> Need some inspiration? </h2>
   <div class="row row-cols-1 row-cols-md-3 g-4 lead">
     <div *ngFor="let recipes of recipesRandom" class="col">
       <div class="card h-100">
@@ -25,7 +22,5 @@
         </div>
       </div>
     </div>
-
   </div>
-
 </section>
