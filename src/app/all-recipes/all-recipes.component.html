@@ -13,15 +13,14 @@
 
     <div class="container allRecipesByName">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
-        <div class="col p-3" *ngFor="let listOfMealFind of listOfMeal">
+        <div class="col p-3" *ngFor="let listOfMealFind of listOfMeal" (click)="getRecipeById(listOfMealFind.idMeal)">
           <div class="card cursor-pointer">
             <img class="card-img-top lead" [src]="listOfMealFind.strMealThumb" [alt]="listOfMealFind.strMeal">
             <div class="card-body lead">
-              <p>{{listOfMealFind.idMeal}}</p>
               <h5 class="card-title lead">{{ listOfMealFind.strMeal }}</h5>
               <p class="card-text lead"></p>
               <button class="btn btn-success lead" data-bs-toggle="modal" data-bs-target="#exemple"
-                (click)="  getRecipeById(listOfMealFind.idMeal)">Choose this
+                (click)="getRecipeById(listOfMealFind.idMeal)">Choose this
                 meal
               </button>
             </div>

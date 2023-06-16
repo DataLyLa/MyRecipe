@@ -119,13 +119,23 @@ ul li {
     position: relative;
     z-index: 1;
   }
+
+  .col p-3 {
+    height: 334px;
+  }
+
+  .card-title {
+    justify-content: center;
+    align-items: center;
+    font-size: 600;
+    }
   
   .cardsRandomListHome button {
-    background-color: #f68713;
+    background-color: #19ab14;
   }
   
   .cardsRandomListHome button:hover {
-    border: 1px solid #f68713;
+    border: 1px solid #19ab14;
     background-color: aliceblue;
     color: #252422;
   }

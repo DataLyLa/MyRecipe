@@ -121,7 +121,6 @@ export class SingleRecipeComponent implements OnInit {
 
   }
 
-
   getRecipeById(idMeal: string): void {
     this.router.navigate(["meal", idMeal]);
     this.scrollToTop();
