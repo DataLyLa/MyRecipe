@@ -14,23 +14,22 @@ export class CarouselComponent {
   mealsRandom: Array<any> = [];
   mealsRandomTwo: Array<any> = [];
 
+  idMeal: any = 0;
+  index = 0;
+
   constructor(private apiService: ApiService, private router: Router) {}
 
   ngOnInit(): void {
-    let i = 0;
-    while (i < 3) {
+    let j = 0;
+    while (j < 3) {
       this.apiService.getSingleRandomMeal().subscribe((response) => {
         this.mealsRandom.push(response.meals[0]);
         console.log('mealsRandom ' + this.mealsRandom[0]);
-
-        // this.apiService.getSingleRandomMeal().subscribe((response) => {
-        //   this.mealsRandomTwo.push(response.meals[0]);
-        //   console.log('mealsRandomTwo = ' + this.mealsRandomTwo[0]);
-        // });
       });
-      i++;
+      j++;
     }
   }
+
   getRecipeById(idMeal: string): void {
     this.router.navigate(['meal', idMeal]);
   }
