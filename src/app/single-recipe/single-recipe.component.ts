@@ -1,6 +1,11 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+
+import { ApiService } from '../services/api.service';;
+import { Observable } from 'rxjs';
+import { Feedbacks } from '../models/feedbacks.models';
+import { FeedbacksService } from '../services/feedbacks.service';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2,Input  } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { ApiService } from '../services/api.service';
+
 import { Ingredients } from '../models/ingredients.model';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { CategoryService } from '../services/category.service';
@@ -13,8 +18,11 @@ import { CategoryService } from '../services/category.service';
   styleUrls: ['./single-recipe.component.scss']
 })
 export class SingleRecipeComponent implements OnInit {
-
-  idMeal: string = "";
+  feedbacks$!: Observable<Feedbacks[]>
+  @Input() idMeal: string = "";
+  @Input() strMeal: string= ""
+  @Input() showOnFeedback: boolean = false
+  full!:boolean
   meal: any = {};
   ingredients: any[] = []; // Déclarez un tableau pour stocker les ingrédients
   tags: any[] = [];
@@ -46,8 +54,10 @@ export class SingleRecipeComponent implements OnInit {
     private apiService: ApiService,
     private sanitizer: DomSanitizer,
     private router: Router,
-    private renderer: Renderer2) { }
+    private renderer: Renderer2,
+    private feedbacksService: FeedbacksService) { }
 
+  
 
 
   @ViewChild('instructionsContainer', { static: true }) instructionsContainer!: ElementRef<any>;
@@ -55,6 +65,8 @@ export class SingleRecipeComponent implements OnInit {
 
   ngOnInit(): void {
 
+   
+    this.showOnFeedback = false
     this.route.paramMap.subscribe((params: ParamMap) => {
       if (params.get("idMeal")) {
         this.idMeal = params.get('idMeal') + "";
@@ -98,7 +110,10 @@ export class SingleRecipeComponent implements OnInit {
       }
     }
     )
-
+    this.idMeal=this.idMeal
+    this.strMeal=this.strMeal
+    this.full=true
+   this.feedbacks$=this.feedbacksService.getFeedbacksByIdMeal(this.idMeal)
 
 
 

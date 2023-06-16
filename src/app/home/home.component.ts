@@ -1,7 +1,9 @@
 import { Router } from '@angular/router';
-import { Component, Renderer2 } from '@angular/core';
+import { Component, Renderer2 , Input } from '@angular/core';
 import { CategoryService } from '../services/category.service';
 import { ApiService } from '../services/api.service';
+import { Feedbacks } from '../models/feedbacks.models';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +11,11 @@ import { ApiService } from '../services/api.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  @Input() feedback!: Feedbacks
+  full: boolean = false
+  @Input() idMeal!: string
+  @Input() showOnFeedback!: boolean
+  feedbacks$!: Observable<Feedbacks[]>
   categoriesList: any[] = [];
   strCategory: string = '';
   recipesRandom: Array<any> = [];
@@ -48,6 +55,7 @@ export class HomeComponent {
       });
       i++;
     }
+    
   }
 
   getRecipeById(idMeal: string): void {
