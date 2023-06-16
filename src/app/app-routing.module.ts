@@ -6,16 +6,20 @@ import { WorldRecipesComponent } from './world-recipes/world-recipes.component';
 import { AllRecipesByCountryComponent } from './all-recipes-by-country/all-recipes-by-country.component';
 import { AllRecipesByCategoryComponent } from './all-recipes-by-category/all-recipes-by-category.component';
 import { SingleRecipeComponent } from './single-recipe/single-recipe.component';
+import { ContactComponent } from './contact/contact.component';
+import { SearchComponent } from './search/search.component';
+import { AllRecipesComponent } from './all-recipes/all-recipes.component';
 
 const routes: Routes = [
-
   { path: '', component: HomeComponent },
 
   { path: 'home', component: HomeComponent },
 
   { path: 'categories', component: CategoryPageComponent },
 
-  { path: 'world-recipes', component: WorldRecipesComponent },
+  { path: 'all-recipes', component: WorldRecipesComponent },
+
+  { path: 'contact', component: ContactComponent },
 
   { path: 'all-recipes/:country', component: AllRecipesByCountryComponent },
 
@@ -23,10 +27,12 @@ const routes: Routes = [
 
   { path: 'meal/:idMeal', component: SingleRecipeComponent },
 
+  { path: 'search', component: SearchComponent },
+  { path: 'allRecepies', component: AllRecipesComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

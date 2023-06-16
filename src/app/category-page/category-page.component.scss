@@ -13,3 +13,27 @@
     position: relative;
     z-index: 1;
 }
+
+.card-title {
+width: auto;
+justify-content: center;
+align-items: center;
+}
+
+.custom-heading {
+    font-size: 32px;
+    margin-top : 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #3F0D12;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .custom-heading { 
+        font-size: 24px;
+    
+    }
+
+
+  }

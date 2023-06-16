@@ -1,0 +1,19 @@
+.formSearch {
+  display: flex;
+  flex-direction: row;
+}
+.formSearch button {
+  margin-left: 2%;
+}
+.formSearch input {
+  margin-left: 2%;
+}
+.formSearch button {
+  background-color: #f68713;
+  color: aliceblue;
+}
+.formSearch button:hover {
+  border: 1px solid #f68713;
+  background-color: aliceblue;
+  color: #252422;
+}

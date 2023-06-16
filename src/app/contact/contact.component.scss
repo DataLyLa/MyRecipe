@@ -1,0 +1,41 @@
+.contactUS .buttonContact {
+  background-color: #f68713;
+}
+.contactUS .buttonContact:hover {
+  border: 1px solid #f68713;
+  background-color: aliceblue;
+  color: #252422;
+}
+.contactUS span {
+  color: red;
+}
+.contactUS .fas {
+  color: #6c757d;
+}
+@media screen and (max-width: 770px) {
+  .imgURLContact {
+    display: none;
+  }
+}
+@media screen and (min-width: 770px) and (max-width: 875px) {
+  // .imgURLContact {
+  //   height: 400;
+  //   width: 336px;
+  // }
+  .imgURLContact.img {
+    height: 400px;
+    width: 336px;
+  }
+}
+@media screen and (min-width: 875px) {
+  .imgURLContact img {
+    height: 400px;
+    width: 456px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .imgURLContact img {
+    height: 400px;
+    width: 546px;
+  }
+}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ApiService } from '../services/api.service';
 
 @Component({
@@ -12,8 +12,8 @@ export class AllRecipesByCategoryComponent {
   category: string = '';
   categoryList: any[] = [];
 
+  constructor(private route: ActivatedRoute, private apiService: ApiService, private router: Router) { }
 
-  constructor(private route: ActivatedRoute, private apiService: ApiService) { }
 
   ngOnInit(): void {
 
@@ -27,13 +27,13 @@ export class AllRecipesByCategoryComponent {
         )
 
       }
-    }
-    )
+    });
 
   }
-
-
-
+  
+  getRecipeById(idMeal: string): void {
+    this.router.navigate(["meal", idMeal])
+  };
 
 }
 

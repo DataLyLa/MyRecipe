@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { CategoryService } from '../services/category.service';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-home',
@@ -7,43 +9,46 @@ import { CategoryService } from '../services/category.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  categoriesList: any[] = [];
+  strCategory: string = '';
+  recipesRandom: Array<any> = [];
+  RecipesByStrCategories = <any>{};
 
-
-  recipes = [{
-    id: 0,
-    src: '../../assets/cake.jpeg',
-    title: 'Rainbow cake',
-    subtitle: 'try this recipe !',
-  },
-  {
-    id: 1,
-    src: '../../assets/grilled-meat.jpeg',
-    title: 'Grilled meat',
-    subtitle: 'try this recipe !',
-  },
-  {
-    id: 2,
-    src: '../../assets/pasta.jpeg',
-    title: 'Pasta',
-    subtitle: 'try this recipe !',
-  }
-
-  ]
-
-  constructor(private categoryService: CategoryService) { }
+  constructor(
+    private categoryService: CategoryService,
+    private apiService: ApiService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
+    let i = 0;
+    while (i < 6) {
+      this.categoryService.getCategories().subscribe((response) => {
+        this.categoriesList = response.categories;
 
-    // this.categoryService.getCategories().subscribe(
+        this.strCategory =
+          this.categoriesList[
+            Math.floor(Math.random() * this.categoriesList.length)].strCategory;
+        console.log(this.strCategory);
 
-    //   response => {
-    //     this.slides = response.categories;
-    //   }
-
+        this.apiService
+          .getRecipesByStrCategory(this.strCategory)
+          .subscribe((response) => {
+            // for (let i = 0; i < 6; i++) {
+            this.recipesRandom.push(
+              response.meals.pop(
+                Math.floor(Math.random() * this.recipesRandom.length)
+              )
+            );
+            // }
+            console.log(this.recipesRandom);
+          });
+      });
+      i++;
+    }
   }
 
-
-
-
-
+  getRecipeById(idMeal: string): void {
+    this.router.navigate(['meal', idMeal]);
+  }
 }

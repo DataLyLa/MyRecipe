@@ -1,30 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
+<nav class="navbar navbar-expand-lg navbar-light bg-white lead">
+  <a class="navbar-brand" routerLink="home">
+    <img src="../../assets/Logo.png" alt="Amazing recipes Logo" height="70px">
+  </a>
 
-    <img src="../../assets/Logo.png" routerLink="home" alt="Amazing recipes Logo" height="70px">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation" (click)="myFunction()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" (click)="myFunction()">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" routerLink="home">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="categories">Categories</a>
-            </li>
-            <!-- <li class="nav-item">
-                <a class="nav-link" routerLink="world-recipes">World Recipes</a>
-            </li> -->
-            <li class="nav-item">
-                <a class="nav-link" href="#">All Recipes</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Customer Feedback</a>
-            </li>
-        </ul>
-
-    </div>
+  <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+    <ul class="navbar-nav ml-auto ">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="home" routerLinkActive="active">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="categories" routerLinkActive="active">Categories</a>
+      </li>
+      <li class="nav-item">
+        <!-- <a class="nav-link" routerLink="all-recipes" routerLinkActive="active">All Recipes</a> -->
+        <a class="nav-link" routerLink="allRecepies" routerLinkActive="active">Recipe Search Engine</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Customer Feedback</a>
+      </li>
+    </ul>
+  </div>
 </nav>
