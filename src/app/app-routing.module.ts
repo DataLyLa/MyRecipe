@@ -8,6 +8,8 @@ import { AllRecipesByCategoryComponent } from './all-recipes-by-category/all-rec
 import { SingleRecipeComponent } from './single-recipe/single-recipe.component';
 import { FeedbacksListComponent } from './feedbacks-list/feedbacks-list.component';
 import { ContactComponent } from './contact/contact.component';
+import { SearchComponent } from './search/search.component';
+import { AllRecipesComponent } from './all-recipes/all-recipes.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -27,6 +29,9 @@ const routes: Routes = [
   { path: 'categories/:category', component: AllRecipesByCategoryComponent },
 
   { path: 'meal/:idMeal', component: SingleRecipeComponent },
+
+  { path: 'search', component: SearchComponent },
+  { path: 'allRecepies', component: AllRecipesComponent },
 ];
 
 @NgModule({

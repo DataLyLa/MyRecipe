@@ -1,0 +1,23 @@
+<div class="container mt-5 lead">
+  <h1 class="text-center my-4 lead">You've got something in mind?</h1>
+  <p>Please, type the name of the meal you're looking for ! </p>
+  <app-form-search (searchTextChanged)="onSearchTextEntered($event)"></app-form-search>
+  <div class="d-flex flex-column py-4 lead">
+    <!-- <h1 class="d-flex mx-auto">There are {{listOfMeal.length}} available meals</h1> -->
+    <div class="container allRecipesByName">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+        <div class="col p-3" *ngFor="let listOfMealFind of listOfMeal" (click)="getRecipeById(listOfMealFind.idMeal)">
+          <div class="card cursor-pointer">
+            <img class="card-img-top lead" [src]="listOfMealFind.strMealThumb" [alt]="listOfMealFind.strMeal">
+            <div class="card-body text-center">
+              <h5 class="card-title">{{ listOfMealFind.strMeal }}</h5>
+              <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple"
+                (click)="getRecipeById(listOfMealFind.idMeal)">Let's cook!
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

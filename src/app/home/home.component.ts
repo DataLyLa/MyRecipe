@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { CategoryService } from '../services/category.service';
 import { ApiService } from '../services/api.service';
@@ -15,7 +16,8 @@ export class HomeComponent {
 
   constructor(
     private categoryService: CategoryService,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -26,8 +28,7 @@ export class HomeComponent {
 
         this.strCategory =
           this.categoriesList[
-            Math.floor(Math.random() * this.categoriesList.length)
-          ].strCategory;
+            Math.floor(Math.random() * this.categoriesList.length)].strCategory;
         console.log(this.strCategory);
 
         this.apiService
@@ -45,5 +46,9 @@ export class HomeComponent {
       });
       i++;
     }
+  }
+
+  getRecipeById(idMeal: string): void {
+    this.router.navigate(['meal', idMeal]);
   }
 }

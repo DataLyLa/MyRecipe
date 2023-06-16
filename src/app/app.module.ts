@@ -19,6 +19,9 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { AllRecipesByCategoryComponent } from './all-recipes-by-category/all-recipes-by-category.component';
 import { SingleRecipeComponent } from './single-recipe/single-recipe.component';
 import { ContactComponent } from './contact/contact.component';
+import { SearchComponent } from './search/search.component';
+import { FormSearchComponent } from './form-search/form-search.component';
+import { AllRecipesComponent } from './all-recipes/all-recipes.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { ContactComponent } from './contact/contact.component';
     FeedbacksListComponent,
     NewFeedbackComponent,
     SingleFeedbackComponent,
-    ContactComponent
+    ContactComponent,
+    SearchComponent,
+    FormSearchComponent,
+    AllRecipesComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ApiService } from '../services/api.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class AllRecipesByCountryComponent implements OnInit {
   country: string = '';
   countryList: any[] = [];
 
-  constructor(private route: ActivatedRoute, private apiService: ApiService) {}
+  constructor(private route: ActivatedRoute, private apiService: ApiService, private router : Router) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -21,8 +21,14 @@ export class AllRecipesByCountryComponent implements OnInit {
           .getRecipesByCountry(this.country)
           .subscribe((response) => {
             this.countryList = response.meals;
+
+            console.log(this.country);
           });
       }
     });
   }
+  getRecipeById(idMeal: string): void {
+    this.router.navigate(["meal", idMeal])
+  };
+
 }
