@@ -28,8 +28,7 @@ export class HomeComponent {
 
         this.strCategory =
           this.categoriesList[
-            Math.floor(Math.random() * this.categoriesList.length)
-          ].strCategory;
+            Math.floor(Math.random() * this.categoriesList.length)].strCategory;
         console.log(this.strCategory);
 
         this.apiService

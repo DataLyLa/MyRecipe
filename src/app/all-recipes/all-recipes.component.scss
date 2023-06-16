@@ -1,9 +1,9 @@
 .allRecipesByName button {
-  background-color: #f68713;
+  background-color: #19ab14;
 }
 
 .allRecipesByName button:hover {
-  border: 1px solid #f68713;
+  border: 1px solid #19ab14;
   background-color: aliceblue;
   color: #252422;
 }
@@ -12,6 +12,7 @@
   width: 100%;
   transition: 0.5s;
   cursor: pointer;
+  height: 320px;
 }
 
 .card {
@@ -40,4 +41,16 @@ h5 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 5px;
+}
+
+.col p-3 {
+  height: 334px;
 }
