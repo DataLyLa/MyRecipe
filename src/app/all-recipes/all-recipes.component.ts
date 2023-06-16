@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, Renderer2 } from '@angular/core';
 import { ApiService } from './../services/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -41,7 +41,7 @@ export class AllRecipesComponent implements OnInit {
     'z',
   ];
 
-  constructor(private apiService: ApiService, private router: Router) {}
+  constructor(private apiService: ApiService, private router: Router, private renderer: Renderer2) { }
 
   ngOnInit() {
     if (!this.searchText) {
@@ -67,5 +67,13 @@ export class AllRecipesComponent implements OnInit {
 
   getRecipeById(idMeal: string): void {
     this.router.navigate(['meal', idMeal]);
+    this.scrollToTop();
   }
+
+  scrollToTop(): void {
+    const element = document.documentElement || document.body;
+    this.renderer.setProperty(element, 'scrollTop', 0);
+  }
+
+
 }
