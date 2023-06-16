@@ -2,7 +2,6 @@ h3 {
     margin: 40px;
     font-size: 30px;
     font-family: Tahoma, Gotham, sans-serif;
-
 }
 
 
@@ -15,10 +14,15 @@ h3 {
 
 .input-container {
     display: flex;
+    flex-direction: column;
     position: relative;
     grid-area: 1 / 1 / 2 / 2;
 }
 
+
+.d-flex {
+    height: 30px;
+}
 
 .error-message {
     display: flex;
@@ -27,16 +31,49 @@ h3 {
     margin-top: 10px;
     font-size: 14px;
     color: orangered;
-    margin-right: 150px;
+    margin-right: 200px;
 }
 
 
 
 .select {
     margin-right: 20px;
+    height: 38.21px;
 }
 
 .select-with-icons {
-width : 250px;
-height: 38.21px;
+    width: 250px;
+    height: 38.21px;
 }
+
+@media (max-width: 768px) {
+    .d-flex {
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+  
+    .me-3 {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    button {
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .error-message {
+      text-align: left;
+      margin-top: 50px;
+      margin-left: 30px;
+      font-size: 14px;
+      color: orangered;
+      position: absolute;
+      left: 0;
+      width: 100%;
+    }
+  }
+  
+  
