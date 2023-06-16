@@ -13,7 +13,7 @@
     Need some inspiration ?
   </h2>
   <div class="row row-cols-1 row-cols-md-3 g-4 lead">
-    <div *ngFor="let recipes of recipesRandom" class="col">
+    <div *ngFor="let recipes of recipesRandom" class="col" (click)=" getRecipeById(recipes.idMeal)">
       <div class="card h-100">
         <img [src]="recipes.strMealThumb" class="card-img-top" [alt]="recipes.strMeal">
         <div class="card-body">
