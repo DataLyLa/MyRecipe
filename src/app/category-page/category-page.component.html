@@ -1,16 +1,18 @@
-<div class="d-flex flex-column py-4 lead">
+<div>
 
-  <h1 class="text-center custom-heading">Here are our categories :</h1>
-
-  <div class="container">
+  <h1 class="text-center my-4 lead">Food categories we're offering </h1>
+  <div class="container lead">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
       <div class="col p-3" *ngFor="let category of categoryList">
         <div class="card cursor-pointer " (click)="goTORecepiesByCategories(category.strCategory)">
           <img [src]="category.strCategoryThumb" class="card-img-top" [alt]="">
-          <div class="card-body text-center">
-            <h5 class="card-title">{{ category.strCategory }} Meals</h5>
-            <button class="btn btn-success mx-auto" data-bs-toggle="modal" data-bs-target="#exemple">Discover this
-              category</button>
+          <div class="card-body">
+            <h5 class="card-title">{{ category.strCategory }} </h5>
+            <div class="container">
+              <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple">Let's see!</button>
+            </div>
+
+
           </div>
         </div>
       </div>
