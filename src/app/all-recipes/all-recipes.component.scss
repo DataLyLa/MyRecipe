@@ -25,6 +25,24 @@
   z-index: 1;
 }
 
+h1 {
+
+  margin: 1em;
+  font-size: 48px;
+  font-family: Tahoma, Gotham, sans-serif;
+
+}
+
+h5 {
+  text-align: center;
+}
+
+.ctr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card-body {
   display: flex;
   flex-direction: column;

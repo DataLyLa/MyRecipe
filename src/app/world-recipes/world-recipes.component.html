@@ -1,6 +1,6 @@
 <div>
-  <h3 class="text-center my-4 lead">Recipes from all over the world just for you!</h3>
-  <div class="container">
+  <h3 class="text-center my-4 lead">Recipes from all over the world just for you! </h3>
+  <div class="container lead">
     <label for="country-choice" class="form-label"></label>
     <div class="input-container">
         <div class="d-flex justify-content-between">
@@ -17,9 +17,15 @@
           </div>
         </div>
 
+        <div>
+          <button class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#exemple"
+            (click)="goTORecepiesByCountry(choice)">Let's go!</button>
+        </div>
+      </div>
 
-    <p *ngIf="showErrorMessage" class="error-message">Please select a country</p>
+
+      <p *ngIf="showErrorMessage" class="error-message">Please select a country</p>
 
 
+    </div>
   </div>
-</div>
