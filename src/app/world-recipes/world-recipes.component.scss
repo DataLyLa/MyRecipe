@@ -31,7 +31,7 @@ h3 {
     margin-top: 10px;
     font-size: 14px;
     color: orangered;
-    margin-right: 180px;
+    margin-right: 200px;
 }
 
 
@@ -51,6 +51,7 @@ h3 {
     .d-flex {
         flex-wrap: wrap;
         justify-content: center;
+        align-items: center;
     }
 
     .me-3 {
@@ -61,15 +62,18 @@ h3 {
     button {
         justify-content: center;
         align-items: center;
-
     }
 
     .error-message {
-        margin-top: 20px;
+        text-align: left;
+        margin-top: 30px;
+        margin-left: 20px;
         font-size: 14px;
         color: orangered;
-        grid-row: auto;
-        grid-column: auto;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transform: translateX(0);
         width: 100%;
     }
 }
