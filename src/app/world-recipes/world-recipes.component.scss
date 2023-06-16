@@ -2,7 +2,6 @@ h3 {
     margin: 40px;
     font-size: 30px;
     font-family: Tahoma, Gotham, sans-serif;
-
 }
 
 
@@ -15,10 +14,15 @@ h3 {
 
 .input-container {
     display: flex;
+    flex-direction: column;
     position: relative;
     grid-area: 1 / 1 / 2 / 2;
 }
 
+
+.d-flex {
+    height: 30px;
+}
 
 .error-message {
     display: flex;
@@ -27,7 +31,7 @@ h3 {
     margin-top: 10px;
     font-size: 14px;
     color: orangered;
-    margin-right: 150px;
+    margin-right: 180px;
 }
 
 
@@ -37,6 +41,34 @@ h3 {
 }
 
 .select-with-icons {
-width : 250px;
-height: 38.21px;
+    width: 250px;
+    height: 38.21px;
+}
+
+
+@media (max-width: 768px) {
+    .d-flex {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .me-3 {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    button {
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .error-message {
+        margin-top: 20px;
+        font-size: 14px;
+        color: orangered;
+        grid-row: auto;
+        grid-column: auto;
+        width: 100%;
+    }
 }
