@@ -22,7 +22,10 @@
             <!--Grid column-->
             <div class="row-md-6">
               <div class="md-form mb-0">
-                <label for="name" class="lead form-label">Name<span> *</span></label>
+
+                <label for="name" class="lead form-label"><i class="fa fa-user icon lead"></i>
+                  Name<span>
+                    *</span></label>
                 <input type="text" id="name" name="name" class="form-control" formControlName="name"
                   [ngClass]="{ 'is-invalid': (f.name.touched && f.name.invalid) ||(f.name.invalid && submitted)}"
                   [ngClass]="{'is-valid': (f.name.touched && f.name.valid)||(submitted && f.name.valid)}" />
@@ -41,7 +44,7 @@
             <!--Grid column-->
             <div class="row-md-6">
               <div class="md-form mb-0">
-                <label for="email" class="lead">E-mail <span> *</span></label>
+                <label for="email" class="lead"><i class="fa fa-envelope icon lead"></i> E-mail <span> *</span></label>
                 <input type="text" id="email" name="email" class="form-control" formControlName="email"
                   [ngClass]="{ 'is-invalid': (f.email.touched && f.email.invalid)||(f.email.invalid && submitted)}"
                   [ngClass]="{'is-valid': (f.email.touched && f.email.valid)||(submitted && f.email.valid)}">
@@ -64,7 +67,7 @@
           <div class="row">
             <div class="row-md-6">
               <div class="md-form mb-0">
-                <label for="subject" class="">Subject</label>
+                <label for="subject"> <i class="fa fa-bars"></i> Subject</label>
                 <input type="text" id="subject" name="subject" class="form-control" formControlName="subject">
 
               </div>
@@ -79,7 +82,8 @@
             <div class="row-md-6">
 
               <div class="md-form">
-                <label for="message">Message <span> *</span></label>
+
+                <label for="message"><i class="fa fa-comments icon lead"></i> Message <span> *</span></label>
                 <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"
                   formControlName="message"
                   [ngClass]="{ 'is-invalid': (f.message.touched && f.message.invalid)||(f.message.invalid && submitted)}"

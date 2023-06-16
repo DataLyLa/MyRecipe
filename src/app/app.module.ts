@@ -11,6 +11,9 @@ import { CategoryPageComponent } from './category-page/category-page.component';
 import { WorldRecipesComponent } from './world-recipes/world-recipes.component';
 import { CardComponent } from './card/card.component';
 import { AllRecipesByCountryComponent } from './all-recipes-by-country/all-recipes-by-country.component';
+import { FeedbacksListComponent } from './feedbacks-list/feedbacks-list.component';
+import { NewFeedbackComponent } from './new-feedback/new-feedback.component';
+import { SingleFeedbackComponent } from './single-feedback/single-feedback.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CarouselComponent } from './carousel/carousel.component';
 import { AllRecipesByCategoryComponent } from './all-recipes-by-category/all-recipes-by-category.component';
@@ -33,6 +36,9 @@ import { AllRecipesComponent } from './all-recipes/all-recipes.component';
     CarouselComponent,
     AllRecipesByCategoryComponent,
     SingleRecipeComponent,
+    FeedbacksListComponent,
+    NewFeedbackComponent,
+    SingleFeedbackComponent,
     ContactComponent,
     SearchComponent,
     FormSearchComponent,
@@ -42,8 +48,8 @@ import { AllRecipesComponent } from './all-recipes/all-recipes.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

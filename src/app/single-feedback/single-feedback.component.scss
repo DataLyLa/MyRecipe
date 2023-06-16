@@ -1,0 +1,45 @@
+@import url(https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+ @import url(http://fonts.googleapis.com/css?family=Calibri:400,300,700);
+
+ .card {
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(237, 150, 0, 0.5);
+    background-color: #ffffff;
+    color: #252422;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+    min-height: 300px;
+}
+ .rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .rating-title {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  .stars {
+    display: inline-block;
+    font-size: 20px;
+  }
+  
+  .star:before {
+    display: inline-block;
+    margin-right: 5px;
+    font-family: FontAwesome;
+  }
+  
+  .filled:before {
+    content: '\f005';
+    color: #FFD700;
+  }
+  
+  .half:before {
+    content: '\f089';
+    color: #FFD700;
+  }
+

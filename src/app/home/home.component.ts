@@ -1,7 +1,9 @@
 import { Router } from '@angular/router';
-import { Component } from '@angular/core';
+import { Component, Renderer2 , Input } from '@angular/core';
 import { CategoryService } from '../services/category.service';
 import { ApiService } from '../services/api.service';
+import { Feedbacks } from '../models/feedbacks.models';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +11,11 @@ import { ApiService } from '../services/api.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  @Input() feedback!: Feedbacks
+  full: boolean = false
+  @Input() idMeal!: string
+  @Input() showOnFeedback!: boolean
+  feedbacks$!: Observable<Feedbacks[]>
   categoriesList: any[] = [];
   strCategory: string = '';
   recipesRandom: Array<any> = [];
@@ -17,6 +24,7 @@ export class HomeComponent {
   constructor(
     private categoryService: CategoryService,
     private apiService: ApiService,
+    private renderer: Renderer2,
     private router: Router
   ) {}
 
@@ -28,7 +36,8 @@ export class HomeComponent {
 
         this.strCategory =
           this.categoriesList[
-            Math.floor(Math.random() * this.categoriesList.length)].strCategory;
+            Math.floor(Math.random() * this.categoriesList.length)
+          ].strCategory;
         console.log(this.strCategory);
 
         this.apiService
@@ -46,9 +55,16 @@ export class HomeComponent {
       });
       i++;
     }
+    
   }
 
   getRecipeById(idMeal: string): void {
     this.router.navigate(['meal', idMeal]);
+    this.scrollToTop();
+  }
+
+  scrollToTop(): void {
+    const element = document.documentElement || document.body;
+    this.renderer.setProperty(element, 'scrollTop', 0);
   }
 }

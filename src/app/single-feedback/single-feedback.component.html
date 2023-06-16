@@ -1,0 +1,20 @@
+
+<div class="container col p-3">
+  <div class="card cursor-pointer">
+    <div class="card-body">
+      <h3 *ngIf="showOnFeedback" class="card-title">{{feedback.strMeal}}</h3>
+      <h5 >User: {{ feedback.userFirstname }} {{ feedback.userLastname }}</h5>
+      <p>Comment: {{ feedback.comment }}</p>
+      <div class="rating">
+        <span class="rating-title">Rating: {{ rating }}</span>
+        <div class="stars">
+          <span class="star" [ngClass]="{'filled': star <= rating, 'half': star - 0.5 === rating}" *ngFor="let star of stars; let i = index"></span>
+        </div>
+      </div>
+      
+    </div>
+    <div>
+      <button *ngIf="showOnFeedback" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemple" (click)="onClickToRecipe(feedback.idMeal)">See the recipe</button>
+    </div>
+  </div>
+</div>
