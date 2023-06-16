@@ -1,5 +1,5 @@
 <div class="container mt-5 lead">
-  <h1 class="text-center my-4 lead">You've got something in mind?</h1>
+  <h1 class="text-center my-4 lead">You've got something in mind ?</h1>
   <p>Please, type the name of the meal you're looking for ! </p>
   <app-form-search (searchTextChanged)="onSearchTextEntered($event)"></app-form-search>
   <div class="d-flex flex-column py-4 lead">
@@ -15,6 +15,26 @@
                 (click)="getRecipeById(listOfMealFind.idMeal)">Let's cook!
               </button>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Show all meals  -->
+  <div class="container allRecipesByName" *ngIf="!searchText">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+      <div class="col p-3" *ngFor="let listAllMealByFirstLettre of listAllOfMeals">
+        <div class="card cursor-pointer">
+          <img class="card-img-top lead" [src]="listAllMealByFirstLettre.strMealThumb"
+            [alt]="listAllMealByFirstLettre.strMeal">
+          <div class="card-body lead">
+            <h5 class="card-title lead">{{ listAllMealByFirstLettre.strMeal }}</h5>
+
+            <button class="btn btn-success lead" data-bs-toggle="modal" data-bs-target="#exemple"
+              (click)="  getRecipeById(listAllMealByFirstLettre.idMeal)">Choose this
+              meal
+            </button>
           </div>
         </div>
       </div>
