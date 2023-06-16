@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { CategoryService } from '../services/category.service';
 import { Router } from '@angular/router';
 
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class CategoryPageComponent implements OnInit {
 
-  constructor(private categoryService: CategoryService, private router: Router) { }
+  constructor(private categoryService: CategoryService, private router: Router, private renderer: Renderer2) { }
 
   strCategory: string = "";
   strCategoryThumb: string = "";
@@ -26,7 +26,13 @@ export class CategoryPageComponent implements OnInit {
   }
 
   goTORecepiesByCategories(category: string) {
-    this.router.navigate(["categories", category])
+    this.router.navigate(["categories", category]);
+    this.scrollToTop();
   }
+
+scrollToTop(): void {
+  const element = document.documentElement || document.body;
+  this.renderer.setProperty(element, 'scrollTop', 0);
+}
 
 }
