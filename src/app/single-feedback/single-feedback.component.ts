@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class SingleFeedbackComponent implements OnInit{
   @Input() feedback!: Feedbacks
   @Input()idMeal: string =''
+  
   rating!: number
   @Input() showOnFeedback: boolean = true
   stars: number[] = [ 1, 2, 3,4, 5];

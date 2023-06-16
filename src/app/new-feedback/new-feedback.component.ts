@@ -18,6 +18,9 @@ export class NewFeedbackComponent implements OnInit {
   constructor(private feedbacksService: FeedbacksService) { }
 
   ngOnInit(): void {
+    this.idMeal= this.idMeal
+    this.strMeal= this.strMeal
+    console.log("titre recette"+this.strMeal +this.idMeal)
   }
 
   submitFeedback(): void {

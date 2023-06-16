@@ -1,4 +1,10 @@
-<p>feedbacks-list works!</p>
+
 <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3" >
+    <ng-container *ngIf="full">
 <app-single-feedback  *ngFor="let feedback of feedbacks$ | async" [feedback]="feedback" [showOnFeedback]="showOnFeedback"></app-single-feedback>
+</ng-container>
+<ng-container *ngIf="!full">
+<app-single-feedback  *ngFor="let feedback of (feedbacks$ | async | slice:0:3)" [feedback]="feedback" [showOnFeedback]="showOnFeedback"></app-single-feedback>
+</ng-container>
 </div>
+

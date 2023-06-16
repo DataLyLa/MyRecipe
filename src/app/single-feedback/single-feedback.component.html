@@ -1,9 +1,8 @@
-<p>single-feedback works!</p>
+
 <div class="container col p-3">
   <div class="card cursor-pointer">
     <div class="card-body">
       <h3 *ngIf="showOnFeedback" class="card-title">{{feedback.strMeal}}</h3>
-      <p>ID Meal: {{ feedback.idMeal }}</p>
       <h5 >User: {{ feedback.userFirstname }} {{ feedback.userLastname }}</h5>
       <p>Comment: {{ feedback.comment }}</p>
       <div class="rating">

@@ -20,8 +20,9 @@ import { CategoryService } from '../services/category.service';
 export class SingleRecipeComponent implements OnInit {
   feedbacks$!: Observable<Feedbacks[]>
   @Input() idMeal: string = "";
-  strMeal: string = ""
+  @Input() strMeal: string= ""
   @Input() showOnFeedback: boolean = false
+  full!:boolean
   meal: any = {};
   ingredients: any[] = []; // Déclarez un tableau pour stocker les ingrédients
   tags: any[] = [];
@@ -110,7 +111,8 @@ export class SingleRecipeComponent implements OnInit {
     }
     )
     this.idMeal=this.idMeal
-    this.strMeal= this.strMeal
+    this.strMeal=this.strMeal
+    this.full=true
    this.feedbacks$=this.feedbacksService.getFeedbacksByIdMeal(this.idMeal)
 
 

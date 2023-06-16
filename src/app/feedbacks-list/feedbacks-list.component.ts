@@ -11,6 +11,7 @@ import { Feedbacks } from '../models/feedbacks.models';
 export class FeedbacksListComponent implements OnInit{
   @Input() idMeal!: string
   @Input() showOnFeedback!: boolean
+  @Input() full:boolean = true
   feedbacks$!: Observable<Feedbacks[]>
 
   constructor(private feedbacksService: FeedbacksService){}
@@ -23,6 +24,8 @@ export class FeedbacksListComponent implements OnInit{
       this.feedbacks$ =
       this.feedbacksService.getAllFeedbacks()
       this.showOnFeedback = this.showOnFeedback = true
+      
+
     }
   }
   
