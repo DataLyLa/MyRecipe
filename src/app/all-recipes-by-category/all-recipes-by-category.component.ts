@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ApiService } from '../services/api.service';
 
@@ -12,7 +12,7 @@ export class AllRecipesByCategoryComponent {
   category: string = '';
   categoryList: any[] = [];
 
-  constructor(private route: ActivatedRoute, private apiService: ApiService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private apiService: ApiService, private router: Router, private renderer: Renderer2) { }
 
 
   ngOnInit(): void {
@@ -32,8 +32,14 @@ export class AllRecipesByCategoryComponent {
   }
   
   getRecipeById(idMeal: string): void {
-    this.router.navigate(["meal", idMeal])
+    this.router.navigate(["meal", idMeal]);
+    this.scrollToTop();
   };
+
+  scrollToTop(): void {
+    const element = document.documentElement || document.body;
+    this.renderer.setProperty(element, 'scrollTop', 0);
+  }
 
 }
 
